@@ -10,7 +10,7 @@ const KontenFeature = ({onPressArtikel, onPressVideo, onPressDokumen}) => {
         <Text style={styles.text}>Konten KMS</Text>
             <View style={styles.wrapper}>
                     <Konten title="Artikel" img={Artikel} onPress={onPressArtikel}/>
-                    <Konten title="Video/Audio" img={Video} onPress={onPressVideo}/>
+                    <Konten title="Video" img={Video} onPress={onPressVideo}/>
                     <Konten title="E-Dokumen" img={Ebook} onPress={onPressDokumen}/>
             </View>
         </View>
@@ -22,8 +22,7 @@ const styles = {
         flex: 1, 
         justifyContent: 'space-around', 
         flexDirection: "row",
-        marginHorizontal : 10,
-        marginBottom: 15
+        marginBottom: 10
     },
     text:{
         fontFamily: 'Nunito',
@@ -31,7 +30,7 @@ const styles = {
         fontSize: 15,
         lineHeight: 20,
         color: colors.red,
-        marginLeft: 24,
+        marginLeft: 12,
         marginBottom:8
     }
 }

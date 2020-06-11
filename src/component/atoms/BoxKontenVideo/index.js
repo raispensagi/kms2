@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, View, ActivityIndicator}  from 'react-native';
+import {Text, Image, View}  from 'react-native';
 import { colors, colortext } from '../../../utils';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {
@@ -8,13 +8,15 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
-const BoxKontenRiwayat = ({title, onPressKonten, isi, kategori}) => {
+const BoxKontenVideo = ({title,img, isi, kategori, onPress}) => {
     return (
-        <TouchableOpacity style={styles.wrapper} activeOpacity={0.7} onPress={onPressKonten}>
-            <View style={{marginHorizontal:10}}>
+    
+    <TouchableOpacity style={styles.wrapper} activeOpacity={0.7} onPress={onPress}>
+             
+            <View>
                 <Text style={styles.textkategori}>{kategori}</Text>
                 <Text style={styles.text}>{title}</Text>
-                <Text style={styles.textisi}>{isi}</Text>
+                <Text style={styles.textisi}>sumber : {isi}</Text>
             </View>
         </TouchableOpacity>
     
@@ -25,22 +27,13 @@ const BoxKontenRiwayat = ({title, onPressKonten, isi, kategori}) => {
 const styles = {
     wrapper : {
         position: 'relative',
-        marginTop:5,
-        marginBottom:5,
         flexDirection: 'row',
-        marginHorizontal: 10,
-        borderRadius: 10,
         backgroundColor: colors.white1,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.07,
-        shadowRadius: 10,
-        elevation: 2
+        borderBottomWidth:1,
+        borderColor: colors.gray4,
     },
     text : {
+        marginHorizontal: 10, 
         color:colortext.black,
         fontSize: hp('2'), 
         fontFamily: 'Nunito', 
@@ -49,15 +42,16 @@ const styles = {
         textAlign: 'justify',
     },
     textisi: {
+        marginHorizontal: 10,
         color:colortext.black,
         fontSize: hp('1.9'), 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textAlign: 'justify',
-        width:wp('72'),
-        marginBottom: 5
+        paddingBottom: 5
     },
     textkategori: {
+        marginHorizontal: 10,
         marginTop:6,
         color:colortext.black,
         fontSize: hp('1.9'), 
@@ -68,4 +62,4 @@ const styles = {
     }
 
 }
-export default BoxKontenRiwayat;
+export default BoxKontenVideo;

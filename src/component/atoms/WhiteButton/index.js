@@ -17,10 +17,11 @@ const WhiteButton = ({title, onPress}) => {
 
 const styles = {
     button : {
-        marginHorizontal:13,
-        marginBottom:10,
+        marginHorizontal:10,
+        marginTop:5,
+        marginBottom:3,
         backgroundColor: colors.white1,
-        borderRadius : 8,
+        borderRadius : 7,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

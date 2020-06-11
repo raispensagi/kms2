@@ -8,18 +8,13 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
-const BoxKonten = ({title,img, isi, kategori}) => {
+const BoxKonten = ({title,tipe, isi, kategori, onPress}) => {
     return (
-    
-    <TouchableOpacity style={styles.wrapper} activeOpacity={0.7}>
-        <View>
-                <Image source={img} style={styles.image}/>
-        </View>
-        
-            <View style={{marginRight:30}}>
-                <Text style={styles.textkategori}>{kategori}</Text>
+    <TouchableOpacity style={styles.wrapper} activeOpacity={0.7} onPress={onPress}>
+          <View style={{marginRight:5}}>
+                <Text style={styles.textkategori}>{tipe} - {kategori}</Text>
                 <Text style={styles.text}>{title}</Text>
-                <Text style={styles.textisi}>{isi.split('').slice(0, 65)}...</Text>
+                <Text style={styles.textisi}>{isi.slice(0,100)}..</Text>
             </View>
         </TouchableOpacity>
     
@@ -30,27 +25,13 @@ const BoxKonten = ({title,img, isi, kategori}) => {
 const styles = {
     wrapper : {
         position: 'relative',
-        marginBottom:10,
         flexDirection: 'row',
-        marginHorizontal: 10,
-        height:hp('13'),
-        borderRadius: 10,
         backgroundColor: colors.white1,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.07,
-        shadowRadius: 10,
-        elevation: 2
-    },
-    image : {
-        height:hp('10'),
-        width:wp('19'),
-        margin: 10
+        borderBottomWidth:1,
+        borderColor: colors.gray4,
     },
     text : {
+        marginHorizontal: 10, 
         color:colortext.black,
         fontSize: hp('2'), 
         fontFamily: 'Nunito', 
@@ -59,22 +40,22 @@ const styles = {
         textAlign: 'justify',
     },
     textisi: {
+        marginHorizontal: 10,
         color:colortext.black,
         fontSize: hp('1.9'), 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textAlign: 'justify',
-        width:wp('67'),
         paddingBottom: 5
     },
     textkategori: {
+        marginHorizontal: 10,
         marginTop:6,
         color:colortext.black,
         fontSize: hp('1.9'), 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textAlign: 'justify',
-        width:wp('60'),
     }
 
 }

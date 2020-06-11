@@ -1,3 +1,5 @@
 import LoginTemplate from './Login';
-
-export {LoginTemplate};
+import VideoPlayer from './VideoPlayer';
+import DokumenPage from './DokumenPage';
+import ArtikelPage from './ArtikelPage'
+export {ArtikelPage, DokumenPage, LoginTemplate, VideoPlayer};

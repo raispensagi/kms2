@@ -8,5 +8,9 @@ import ProfilBeranda from './ProfilBeranda';
 import BoxKonten from './BoxKonten';
 import SearchBox from './SearchBox';
 import WhiteButton from './WhiteButton';
-import BoxKontenRiwayat from './BoxKontenRiwayat'
-export {BoxKontenRiwayat, WhiteButton, SearchBox, ActionButton, BoxKonten, OrangeButton, RedButton, Konten, LoginInput, ImageCircle,ProfilBeranda};
+import BoxKontenRiwayat from './BoxKontenRiwayat';
+import BookmarkButton from './BookmarkButton';
+import DownloadButton from './DownloadButton';
+import BoxKontenVideo from './BoxKontenVideo';
+import PasswordInput from './PasswordInput';
+export {BoxKontenVideo, PasswordInput, DownloadButton, BoxKontenRiwayat, BookmarkButton, WhiteButton, SearchBox, ActionButton, BoxKonten, OrangeButton, RedButton, Konten, LoginInput, ImageCircle,ProfilBeranda};

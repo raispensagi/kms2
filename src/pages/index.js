@@ -8,17 +8,23 @@ import Home from './Home';
 import DaftarNotifikasi from './DaftarNotifikasi';
 import Tersimpan from './Tersimpan';
 import Profil from './Profil';
-import Riwayat from './Riwayat';
 import KategoriArtikel from './KategoriArtikel';
 import DaftarArtikel from './DaftarArtikel';
 import DaftarVideo from './DaftarVideo';
 import DaftarDokumen from './DaftarDokumen';
+import NavigationBar from './NavigationBar';
+import PageVideo from './PageVideo';
+import PageDokumen from './PageDokumen';
+import PageArtikel from './PageArtikel';
+import PageNotifikasi from './PageNotifikasi'
 export {
+    PageArtikel,
+    PageDokumen,
+    PageVideo,
     DaftarDokumen,
     DaftarArtikel,
     DaftarVideo,
     KategoriArtikel,
-    Riwayat, 
     Splash, 
     Login, 
     Register, 
@@ -28,5 +34,6 @@ export {
     Home, 
     DaftarNotifikasi, 
     Tersimpan, 
-    Profil
+    Profil,
+    NavigationBar
 };

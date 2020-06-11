@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StatusBar} from 'react-native';
 import { colors } from '../../utils';
 import RedButton from '../../component/atoms/RedButton';
 import { Welcomepage3 } from '../../assets';
@@ -10,13 +10,16 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { color } from 'react-native-reanimated';
 
 const WelcomePage3 = ({navigation}) => {
     const handleGoTo = screen => {
-        navigation.navigate(screen);
+        navigation.replace(screen);
     };
     return (
         <View style={styles}>
+        <StatusBar barStyle="dark-content" backgroundColor='#f5f5f5' />
             <View style={styles.wrapper}>
                     <Image source={Welcomepage3} style={styles.img}/>
                     <Text style={styles.textgreen}>Mendapatkan informasi terbaru dan terupdate langsung dari pakar sawit dengan cepat</Text>

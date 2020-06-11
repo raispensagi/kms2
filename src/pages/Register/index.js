@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Alert} from 'react-native';
 import { LoginTemplate } from '../../template';
-import { LoginInput, ActionButton  } from '../../component/atoms';
+import { LoginInput, ActionButton, PasswordInput  } from '../../component/atoms';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
+import AsyncStorage from '@react-native-community/async-storage';
 
 const Register = ({navigation}) => {
     const [form, setForm] = useState({
-        fullName: '',
+        nama: '',
         email:'',
-        password:''
+        password:'',
     });
     const onInputChange = (value, input) => {
         setForm({
@@ -18,11 +18,40 @@ const Register = ({navigation}) => {
         })
     }
     const sendData = screen => {
-        console.log('kirim data', form);
-        navigation.replace(screen);
+        if (form.nama==='') {
+            Alert.alert("Nama tidak boleh kosong")
+        }
+        if (form.email==='') {
+            Alert.alert("Email tidak boleh kosong")
+        }
+        if (form.password==='') {
+            Alert.alert("Password tidak boleh kosong")
+        }
+        if (form.password!=='' && form.email!=='') {
+        fetch(`http://117.53.47.76/kms_backend/public/api/petani/register`,
+        {
+            method:"POST",
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+        .then((response) => response.json())
+        .then(async (data)=> {
+            try {
+                const value = JSON.stringify(data.access_token)
+                await AsyncStorage.setItem('userToken', value)
+                console.log(data)
+                navigation.replace(screen)
+            } catch (err) {
+                console.log('AsyncStorage Error: ' + error.message);
+            }
+        })
+    }
     };
     const handleGoTo = screen => {
-        navigation.navigate(screen);
+        navigation.replace(screen);
     };
     return (
         <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
@@ -30,19 +59,18 @@ const Register = ({navigation}) => {
                 <LoginTemplate/>
                 <LoginInput placeholder="Nama                                   " icon="person"
                     value={form.fullName}
-                    onChangeText={value=>onInputChange(value, 'fullName')}
+                    onChangeText={value=>onInputChange(value, 'nama')}
                 />
                 <LoginInput placeholder="Email                                  " icon="email"
                     value={form.email}
                     onChangeText={value=>onInputChange(value, 'email')}
                 />
-                <LoginInput placeholder="Password                               " icon="lock"
+                <PasswordInput placeholder="Password                                  " icon="lock"
                     value={form.password}
                     onChangeText={value=>onInputChange(value, 'password')}
-                    secureTextEntry={true}
                 />
             </View>
-            <ActionButton title="Daftar" onPress={() => sendData('NavigationBar')}/>
+            <ActionButton title="Daftar" onPress={() => sendData('KMS Sawit')}/>
             <View style={styles.wrapper}>
                 <Text>Sudah memiliki akun?</Text>
                 <Text style={styles.textbutton} onPress={() => handleGoTo('Login')}> Masuk</Text>

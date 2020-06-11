@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -20,16 +20,17 @@ import Router from './router';
 import { Provider } from 'react-redux';
 import {store} from './redux';
 import { colors } from './utils';
+import { WelcomePage1, NavigationBar } from './pages';
 
 const App = () => {
-  return (
-    <Provider store={store}>
+ 
+    return (
+      <Provider store={store}>
       <NavigationContainer>
         <Router/>
       </NavigationContainer>
     </Provider>
-    
-  );
+    );
 };
 
 const styles = StyleSheet.create({
