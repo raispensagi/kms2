@@ -5,8 +5,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../../utils';
 import { Icon } from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
-import Draft from '../Draft';
-import { Screen, AddButton } from '../../component/atoms';
 const Tab = createBottomTabNavigator();
 
 const NavigationBar=()=> {
@@ -16,7 +14,7 @@ const NavigationBar=()=> {
       tabBarOptions={{
         activeTintColor: colors.gray2,
         inactiveTintColor: icons.icon,
-        keyboardHidesTabBar:true,
+        keyboardHidesTabBar:true
       }}
       backBehavior='none'
     >
@@ -37,26 +35,6 @@ const NavigationBar=()=> {
           tabBarLabel: 'Tersimpan',
           tabBarIcon: ({color}) => (
             <Icon iconStyle={styles.icon} name="bookmark" size={28} color={color}/>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Add"
-        component={Screen}
-        options={{
-          tabBarVisible: true,
-          tabBarLabel: 'Tambah',
-          tabBarButton: () => (
-          <AddButton/>)
-        }}
-      />
-      <Tab.Screen
-        name="Draft"
-        component={Draft}
-        options={{
-          tabBarLabel: 'Draft',
-          tabBarIcon: ({color}) => (
-            <Icon iconStyle={styles.icon} name="description" size={28} color={color}/>
           ),
         }}
       />

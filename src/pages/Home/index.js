@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {View, Text, FlatList, StatusBar, RefreshControl, ActivityIndicator} from 'react-native';
 import { NavigasiBar, Notifikasi, KontenFeature, BoxRiwayat } from '../../component/molecules';
 import { ScrollView } from 'react-native-gesture-handler';
-import { ProfilBeranda, BoxKonten, HeaderBar, BoxKontenRiwayat, AddButton } from '../../component/atoms';
+import { ProfilBeranda, BoxKonten, HeaderBar, BoxKontenRiwayat } from '../../component/atoms';
 import { colors } from '../../utils';
 import { PakarFemale } from '../../assets';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/riwayat`,
+        fetch(`http://117.53.47.76/kms_backend/public/api/petani/riwayat`,
         {
             method:"GET",
             headers: new Headers ( {
@@ -56,7 +56,6 @@ const Home = ({navigation}) => {
                     onPressVideo={()=>navigation.navigate('Daftar Video')} 
                     onPressDokumen={()=>navigation.navigate('Daftar E-Dokumen')}/>
                     <Text style={styles.riwayat}>Riwayat</Text>
-                    
                     </>
                 }
                 data={data}

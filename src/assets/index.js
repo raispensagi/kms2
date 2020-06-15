@@ -11,5 +11,8 @@ import PakarMale from './icon/teacher-male.png';
 import Video from './icon/video.png';
 import Kelapa from './gambar/kelapa.jpg';
 import Chart from './gambar/chart.png';
+import Red from './icon/red.png';
+import Orange from './icon/orange.png';
+import Green from './icon/green.png'
 
-export {Chart, Kelapa, Avatar, Bell, Welcomepage2,Welcomepage3, Logo, Ebook, PakarFemale, PakarMale, Petani, Artikel, Video};
+export {Red, Orange, Green, Chart, Kelapa, Avatar, Bell, Welcomepage2,Welcomepage3, Logo, Ebook, PakarFemale, PakarMale, Petani, Artikel, Video};

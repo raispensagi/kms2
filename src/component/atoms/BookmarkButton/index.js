@@ -40,7 +40,7 @@ function Item({ id }) {
       setBookmark({bookmark:"true"})
       const token = await AsyncStorage.getItem('userToken')
       const userToken = JSON.parse(token)          
-          fetch(`http://117.53.47.76/kms_backend/public/api/bookmark/add/${id}`,
+          fetch(`http://117.53.47.76/kms_backend/public/api/petani/bookmark/add/${id}`,
           {
               method:"POST",
               headers: new Headers ( {
@@ -63,7 +63,7 @@ function Item({ id }) {
       setBookmark({bookmark:"false"})
       const token = await AsyncStorage.getItem('userToken')
       const userToken = JSON.parse(token)          
-          fetch(`http://117.53.47.76/kms_backend/public/api/bookmark/delete/${id}`,
+          fetch(`http://117.53.47.76/kms_backend/public/api/petani/bookmark/delete/${id}`,
           {
               method:"DELETE",
               headers: new Headers ( {

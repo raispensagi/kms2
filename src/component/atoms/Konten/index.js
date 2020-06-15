@@ -44,7 +44,7 @@ const styles = {
     text : {
         color:colortext.white, 
         marginTop:-4,
-        fontSize: hp('2'), 
+        fontSize: 14, 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textTransform:'capitalize',

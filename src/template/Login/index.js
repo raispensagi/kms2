@@ -35,7 +35,7 @@ const styles = {
         elevation: 30,
     },
     logo : {
-        marginTop: 5,
+        marginTop: 2,
         resizeMode: "center",
         width: wp('25'),
         height: hp('13'), 
@@ -43,8 +43,8 @@ const styles = {
     },
     boxlogo : {
         backgroundColor: colors.white1,
-        width: wp('27'),
-        height: hp('15'), 
+        width: 100,
+        height: 100, 
         alignSelf: 'center',
         marginTop: hp('15'),
         shadowColor: "#000",

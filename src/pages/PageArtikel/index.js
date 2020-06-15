@@ -59,7 +59,6 @@ const PageArtikel = ({route}) => {
                     id={item.id}
                     judul={item.judul}
                     penulis= {item.penulis.map(value => value.nama)}
-                    // img={item.konten.map(value => value.foto)}
                     isi={item.konten.map(value => value.isi)}
                   />
                   }

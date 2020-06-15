@@ -47,14 +47,13 @@ const styles = {
     logo : {
         marginTop: 5,
         resizeMode: "center",
-        width: wp("30"),
-        height: hp('14'), 
+        width: 110,
+        height: 110, 
         alignSelf: "center",
     },
     boxlogo : {
-        backgroundColor: colors.white1,
-        width: wp('30'),
-        height: hp('16'), 
+        width: 110,
+        height: 110, 
         alignSelf: 'center',
         shadowColor: "#000",
         shadowOffset: {

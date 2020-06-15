@@ -12,9 +12,9 @@ import {
    
 const ProfilBeranda=({fullName, role, img, email})=> {
     return (
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection:'row', marginTop:5}}>
             <ImageCircle img={Petani}/>
-            <View style={{flexDirection:'column', flex:1, marginTop:17}}>
+            <View style={{flexDirection:'column', flex:1, marginTop:8}}>
                 <Text style={styles.textnama} >{fullName}</Text>
                 <Text style={styles.textrole}>{role}</Text>
                 <Text style={styles.textrole}>{email}</Text>

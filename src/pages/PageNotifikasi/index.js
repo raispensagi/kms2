@@ -6,7 +6,9 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
+import AsyncStorage from '@react-native-community/async-storage';
 import { NotifikasiPage } from '../../template';
+import { colors } from '../../utils';
 
 const PageNotifikasi = ({route}) => {
     const {headline, isi} = route.params;

@@ -20,7 +20,7 @@ const styles = {
         backgroundColor: colors.red,
         borderRadius : 10,
         alignSelf: 'flex-end',
-        marginRight: 10,
+        marginLeft: 65,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

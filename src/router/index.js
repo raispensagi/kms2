@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo} from '../pages';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../utils';
 import { Icon } from 'react-native-elements';
@@ -28,7 +28,7 @@ const Router = () => {
             <Stack.Screen name="WelcomePage1" component={WelcomePage1} options={{headerShown:false}}/>
             <Stack.Screen name="WelcomePage2" component={WelcomePage2} options={{headerShown:false}}/>
             <Stack.Screen name="WelcomePage3" component={WelcomePage3} options={{headerShown:false}}/>
-            <Stack.Screen name="KMS Sawit"  component={NavigationBar}/>
+            <Stack.Screen name="KMS Sawit" component={NavigationBar}/>
             <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
             <Stack.Screen name="Register" component={Register} options={{headerShown:false}}/>
             <Stack.Screen name="Beranda" component={Home} options={{headerShown:false}}/>
@@ -43,9 +43,6 @@ const Router = () => {
             <Stack.Screen name= 'EDokumen' component={PageDokumen}/>
             <Stack.Screen name= 'Artikel' component={PageArtikel}/>
             <Stack.Screen name= 'Notifikasi' component={PageNotifikasi}/>
-            <Stack.Screen name= 'Tambah Artikel' component={TambahArtikel}/>
-            <Stack.Screen name= 'Tambah Dokumen' component={TambahDokumen}/>
-            <Stack.Screen name= 'Tambah Video' component={TambahVideo}/>
         </Stack.Navigator>
     );
 };

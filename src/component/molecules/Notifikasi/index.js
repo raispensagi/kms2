@@ -98,7 +98,7 @@ const Notifikasi = ({notif, onPress, navigation}) => {
                     renderItem={({item}) => 
                         <Text style={styles.notif}>{item.map(value => value.headline).slice(0, 40)}</Text>
                                     }
-                    keyExtractor={(item) => item.map(value => value.id).toString()}
+                    keyExtractor={(item) => item.id}
                 />
             </View>
         </View>

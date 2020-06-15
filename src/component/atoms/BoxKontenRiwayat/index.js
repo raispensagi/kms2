@@ -42,7 +42,7 @@ const styles = {
     },
     text : {
         color:colortext.black,
-        fontSize: hp('2'), 
+        fontSize: 13.5, 
         fontFamily: 'Nunito', 
         fontWeight: '700', 
         textTransform:'capitalize',
@@ -50,7 +50,7 @@ const styles = {
     },
     textisi: {
         color:colortext.black,
-        fontSize: hp('1.9'), 
+        fontSize: 13, 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textAlign: 'justify',
@@ -60,7 +60,7 @@ const styles = {
     textkategori: {
         marginTop:6,
         color:colortext.black,
-        fontSize: hp('1.9'), 
+        fontSize: 12, 
         fontFamily: 'Nunito', 
         fontWeight: '600', 
         textAlign: 'justify',
