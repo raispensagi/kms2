@@ -11,7 +11,7 @@ const DaftarNotifikasi = ({jumlah,notif, navigation}) => {
     const getNotifikasi = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/all`,
+        fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/my`,
         {
             method:"GET",
             headers: new Headers ( {
@@ -27,11 +27,12 @@ const DaftarNotifikasi = ({jumlah,notif, navigation}) => {
             console.error(error);
         });
     }
+    
     const [refreshing,setRefreshing]= useState(false)
     const onRefresh = useCallback( async ()=> {
         setRefreshing(true);
         try {
-            getData();
+            getNotifikasi();
             setRefreshing(false)
         }  
         catch {
@@ -51,14 +52,16 @@ const DaftarNotifikasi = ({jumlah,notif, navigation}) => {
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
                 }
                 renderItem={({item}) => 
-                    <BoxNotifikasi  id={item.id}
-                                    name={item.headline} 
-                                    role={item.role} 
-                                    isi={item.isi.slice(0,78)}
-                                    onPress={()=> navigation.navigate('Notifikasi', {id:item.id})}
+                    <BoxNotifikasi  id={item.map(value => value.id)}
+                                    name={item.map(value => value.headline)} 
+                                    isi={item.map(value => value.isi).toString().slice(0,78)}
+                                    onPress={()=> navigation.navigate('Notifikasi', 
+                                            {headline:item.map(value => value.headline),
+                                             isi:item.map(value => value.isi),
+                                            })}
                                     />  
                 }
-                keyExtractor={item => item.id.toString()}
+                keyExtractor={item =>item.map(value => value.id).toString()}
             />
         </SafeAreaView>
     )
@@ -86,6 +89,7 @@ const styles = {
     wrapper: {
         position: 'relative',
         flexDirection: 'column',
+        flex:1
     },
 }
 export default DaftarNotifikasi;

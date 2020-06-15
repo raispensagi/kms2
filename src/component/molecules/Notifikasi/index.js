@@ -10,7 +10,7 @@ import {
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
 import AsyncStorage from '@react-native-community/async-storage';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 const Notifikasi = ({notif, onPress, navigation}) => {
     const [notifikasi, setNotifikasi]= useState();
@@ -18,7 +18,7 @@ const Notifikasi = ({notif, onPress, navigation}) => {
     const getNotifikasi = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/all`,
+        fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/my`,
         {
             method:"GET",
             headers: new Headers ( {
@@ -29,27 +29,65 @@ const Notifikasi = ({notif, onPress, navigation}) => {
         .then((responseJson) => {
             setNotifikasi(responseJson.notifikasi.slice(0,3))
             setJumlah(Object.keys(responseJson.notifikasi).length) ;
+            console.log(Object.keys(responseJson.notifikasi).length)
         }
         )
         .catch((error) => {
             console.error(error);
         });
     }
-    useEffect(()=> {
-        getNotifikasi()
-    }, [])
+    const [refreshing,setRefreshing]= useState(false)
+    const onRefresh = useCallback( async ()=> {
+            setRefreshing(true);
+            try {
+                getNotifikasi();
+                setRefreshing(false)
+            }  
+            catch {
+                console.error();
+            }             
+
+        }, [refreshing])
+        useEffect(()=> {
+            getNotifikasi()
+        }, [])
+    if (jumlah===0) {
+       return (
+        <SafeAreaView style={styles.wrapper}>
+        <View style={{flexDirection:'row', marginTop:3}}>
+        <ImageCircle img={Bell}/>
+            <View style={{flexDirection:"column",}}>
+                    <View style={styles.button}>
+                        <View>
+                            <Text style={styles.text}>Tidak ada notifikasi</Text>
+                        </View>
+                    </View>
+                </View>
+        </View>
+            <ScrollView 
+            refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+            }/>
+        </SafeAreaView>
+        )
+    } else {
     return (
     <SafeAreaView style={styles.wrapper}>
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection:'row', marginTop:3}}>
+        <View style={{marginTop:3}}>
             <ImageCircle img={Bell}/>
+        </View>
             <View style={{flexDirection:'column'}}>
                 <FlatList
                     data={notifikasi}
+                    refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+                    }
                     ListHeaderComponent={
                         <View style={{flexDirection:"column",}}>
                             <View style={styles.button}>
                                 <View>
-                                    <Text style={styles.text}>{jumlah} Notifikasi baru</Text>
+                                    <Text style={styles.text}>{jumlah} Notifikasi</Text>
                                 </View>
                                 <View>
                                     <Text style={styles.lihat} onPress={onPress}>Lihat</Text>
@@ -58,19 +96,20 @@ const Notifikasi = ({notif, onPress, navigation}) => {
                         </View>
                     }
                     renderItem={({item}) => 
-                        <Text style={styles.notif}>{item.headline.slice(0, 40)}</Text>
+                        <Text style={styles.notif}>{item.map(value => value.headline).slice(0, 40)}</Text>
                                     }
-                    keyExtractor={(item) => item.id.toString()}
+                    keyExtractor={(item) => item.map(value => value.id).toString()}
                 />
             </View>
         </View>
         </SafeAreaView>
     )
+    }
 };
 const styles = {
     notif: {
         color: colortext.white, 
-        fontSize: hp('2'),
+        fontSize: 13.5,
         width: wp('70')
     },
     button: {
@@ -82,19 +121,19 @@ const styles = {
         color: colortext.white,
         fontFamily: 'Nunito',
         fontWeight: '700',
-        fontSize: hp('2.2'),
-        marginTop: 10,
+        fontSize: 15,
+        marginTop: 5,
     },
     lihat :{
-        marginRight:14,
+        marginRight:25,
         color: colortext.white,
         fontFamily: 'Nunito',
         fontWeight: '700',
-        fontSize: hp('2.2'),
-        marginTop: 10,
+        fontSize: 15,
+        marginTop: 5,
     },
     wrapper: {
-        height: hp('15'),
+        height: 94,
         flexDirection: 'row',
         marginHorizontal: 10,
         marginVertical:15,

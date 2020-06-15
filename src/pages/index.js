@@ -17,7 +17,16 @@ import PageVideo from './PageVideo';
 import PageDokumen from './PageDokumen';
 import PageArtikel from './PageArtikel';
 import PageNotifikasi from './PageNotifikasi'
+import Draft from './Draft';
+import TambahArtikel from './TambahArtikel';
+import TambahDokumen from './TambahDokumen';
+import TambahVideo from './TambahVideo';
 export {
+    PageNotifikasi,
+    TambahArtikel,
+    TambahDokumen,
+    TambahVideo,
+    Draft, 
     PageArtikel,
     PageDokumen,
     PageVideo,

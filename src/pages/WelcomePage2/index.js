@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, StatusBar} from 'react-native';
 import { colors } from '../../utils';
 import RedButton from '../../component/atoms/RedButton';
-import { Welcomepage2 } from '../../assets';
+import { Welcomepage2, Green, Orange } from '../../assets';
 import { OrangeButton } from '../../component/atoms';
 import {
     widthPercentageToDP as wp,
@@ -23,9 +23,16 @@ const WelcomePage2 = ({navigation}) => {
                     <Image source={Welcomepage2} style={styles.img}/>
                     <Text style={styles.textgreen}>Berbagi dan mencari informasi terkait kelapa sawit dengan mudah dimana saja</Text>
             </View>
-            <View style={styles.circle1}/>
-            <View style={styles.circle3}/>
-             <View style={{ flexDirection:"row", justifyContent:"space-between", bottom:0, marginBottom: 20, marginHorizontal:20,}}>
+            <View style={styles.circle1}>
+                <Image source={Green} style={{resizeMode: "contain",alignSelf: "center", height:150,}}/>
+            </View>
+            <View style={styles.circle2}>
+                <Image source={Orange} style={{resizeMode: "contain",alignSelf: "center", height:230,}}/>
+            </View>
+            <View style={styles.circle3}>
+                <Image source={Green} style={{resizeMode: "contain",alignSelf: "center", height:230,}}/>
+            </View>
+             <View style={styles.button}>
                 <OrangeButton title="Lewati" onPress={() => handleGoTo('Login')}/>
                 <RedButton title="Lanjut" onPress={() => handleGoTo('WelcomePage3')}/>
             </View>
@@ -35,12 +42,19 @@ const WelcomePage2 = ({navigation}) => {
 
 const styles = {
     flex: 1,
+    button :{
+        position:'absolute',
+        flexDirection:"row", 
+        bottom:15,
+        marginHorizontal:wp('3'), 
+        marginTop:215
+    },
     img : {
         height: hp('18'),
         resizeMode: "contain",
         alignSelf: "center",
         marginBottom : hp('2'),
-        marginTop : hp('27'),
+        marginTop : hp('27.85'),
     },
     wrapper : {
         alignItems: 'center',
@@ -50,19 +64,20 @@ const styles = {
         fontFamily: 'Nunito',
         fontWeight: 'bold',
         color:colors.green2,
-        fontSize: hp('2.7'),
+        fontSize: 17,
         alignItems: 'center',
         textAlign: 'center',
-        marginHorizontal: 40,
+        marginBottom: wp('-1.5'),
+        marginHorizontal: wp('5'),
+        elevation: 10
     },
     circle1 : {
         position: 'absolute',
-        width: 150,
-        height: 150,
-        borderRadius: 150/2,
-        backgroundColor: colors.green5,
-        top: hp('-10'),
-        left: wp('80'),
+        width: 180,
+        height: 180,
+        borderRadius: wp('150/2'),
+        top: -40,
+        left: 250,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -73,12 +88,11 @@ const styles = {
     },
     circle2 : {
         position: 'absolute',
-        width: 200,
-        height: 200,
-        borderRadius: 250/2,
-        backgroundColor: colors.orange,
-        top: 200,
-        left: -120,
+        width: wp('55'),
+        height: hp('31'),
+        borderRadius: wp('250/2'),
+        top: hp('33'),
+        left: wp('-32'),
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -88,12 +102,12 @@ const styles = {
         shadowRadius: 5,
     },
     circle3 : {
-        width: 185,
-        height: 185,
-        borderRadius: 185/2,
-        backgroundColor: colors.green5,
-        bottom: hp('-18'),
-        left: wp('80'),
+        position: 'absolute',
+        width: wp('51'),
+        height: hp('29'),
+        borderRadius: wp('185/2'),
+        bottom: hp('-16'),
+        left: wp('78'),
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

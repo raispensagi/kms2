@@ -16,7 +16,7 @@ const BoxNotifikasi = ({name, isi, onPress, id}) => {
     const remove = async () => {
       const token = await AsyncStorage.getItem('userToken')
       const userToken = JSON.parse(token)          
-      fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/delete/${id}`,
+      fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/my/delete/${id}`,
       {
         method:"DELETE",
         headers: new Headers ( {
