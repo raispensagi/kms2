@@ -1,10 +1,11 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil, Riwayat, Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel} from '..';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil, Riwayat, Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, Draft, Screen} from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../../utils';
 import { Icon } from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
+import { AddButton } from '../../component/atoms';
 const Tab = createBottomTabNavigator();
 
 const NavigationBar=()=> {
@@ -35,6 +36,16 @@ const NavigationBar=()=> {
           tabBarLabel: 'Tersimpan',
           tabBarIcon: ({color}) => (
             <Icon iconStyle={styles.icon} name="bookmark" size={28} color={color}/>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Draft"
+        component={Draft}
+        options={{
+          tabBarLabel: 'Draft',
+          tabBarIcon: ({color}) => (
+            <Icon iconStyle={styles.icon} name="description" size={28} color={color}/>
           ),
         }}
       />

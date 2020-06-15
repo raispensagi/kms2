@@ -61,7 +61,7 @@ const DaftarNotifikasi = ({jumlah,notif, navigation}) => {
                                             })}
                                     />  
                 }
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.map(value => value.id).toString()}
             />
         </SafeAreaView>
     )

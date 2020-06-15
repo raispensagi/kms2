@@ -16,8 +16,19 @@ import NavigationBar from './NavigationBar';
 import PageVideo from './PageVideo';
 import PageDokumen from './PageDokumen';
 import PageArtikel from './PageArtikel';
-import PageNotifikasi from './PageNotifikasi'
+import PageNotifikasi from './PageNotifikasi';
+import TambahDokumen from './TambahDokumen';
+import TambahArtikel from './TambahArtikel';
+import TambahVideo from './TambahVideo';
+import Screen from './Screen';
+import Draft from './Draft';
 export {
+    Draft,
+    Screen,
+    PageNotifikasi,
+    TambahArtikel,
+    TambahVideo,
+    TambahDokumen,
     PageArtikel,
     PageDokumen,
     PageVideo,

@@ -2,18 +2,19 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {View, Text, FlatList, StatusBar, RefreshControl, ActivityIndicator} from 'react-native';
 import { NavigasiBar, Notifikasi, KontenFeature, BoxRiwayat } from '../../component/molecules';
 import { ScrollView } from 'react-native-gesture-handler';
-import { ProfilBeranda, BoxKonten, HeaderBar, BoxKontenRiwayat } from '../../component/atoms';
+import { ProfilBeranda, BoxKonten, HeaderBar, BoxKontenRiwayat, AddButton } from '../../component/atoms';
 import { colors } from '../../utils';
-import { PakarFemale } from '../../assets';
+import { BlurView } from "@react-native-community/blur";
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import ActionButton from 'react-native-action-button';
+import { Icon } from 'react-native-elements';
 const Home = ({navigation}) => {
     const [data, setData] = useState();
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/petani/riwayat`,
+        fetch(`http://117.53.47.76/kms_backend/public/api/riwayat`,
         {
             method:"GET",
             headers: new Headers ( {
@@ -71,6 +72,49 @@ const Home = ({navigation}) => {
                                 />}
                         keyExtractor={(item) => item.id.toString()}
             />
+            <ActionButton   backgroundTappable={true} 
+                            buttonColor={colors.red} 
+                            spacing={7} 
+                            active={true}
+                            offsetX={15}
+                            offsetY={15}
+                            buttonTextStyle={{fontSize:30}}
+                            backdrop={
+                                <View
+                                    style={{flex:1,
+                                            backgroundColor:'#000000',
+                                            opacity:0.7}}
+                                    />
+                            }
+                            useNativeFeedback={false}>
+                <ActionButton.Item  spaceBetween={10} 
+                                    textContainerStyle={{borderRadius:5}} 
+                                    buttonColor={colors.red} title="Artikel" 
+                                    onPress={ ()=>navigation.navigate('Tambah Artikel')}
+                                    textStyle={{fontFamily:'Nunito'}}
+                                    useNativeFeedback={false}>
+                    <Icon name="description" color={colors.white1} size={21} />
+                </ActionButton.Item>
+                <ActionButton.Item  spaceBetween={10} 
+                                    textContainerStyle={{borderRadius:5}} 
+                                    buttonColor={colors.orange} 
+                                    title="Video" 
+                                    onPress={() => navigation.navigate("Tambah Video")}
+                                    textStyle={{fontFamily:'Nunito'}}
+                                    useNativeFeedback={false}
+                                    >
+                    <Icon name="videocam" color={colors.white1} size={23} />
+                </ActionButton.Item>
+                <ActionButton.Item  spaceBetween={10} 
+                                    textContainerStyle={{borderRadius:5}} 
+                                    buttonColor={colors.green4} 
+                                    title="E-Dokumen" 
+                                    onPress={() => navigation.navigate("Tambah Dokumen")}
+                                    textStyle={{fontFamily:'Nunito'}}
+                                    useNativeFeedback={false}>
+                    <Icon name="dvr" color={colors.white1} size={21} />
+                </ActionButton.Item>
+            </ActionButton>
         </View>
     );
 };

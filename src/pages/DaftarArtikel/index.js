@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, SafeAreaView, ActivityIndicator, RefreshControl } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { SearchBox, WhiteButton, BoxKonten } from '../../component/atoms';
+import { SearchBox, WhiteButton, BoxKonten, AddButton } from '../../component/atoms';
 import { Kelapa } from '../../assets';
 import { colors } from '../../utils';
 import AsyncStorage from '@react-native-community/async-storage';

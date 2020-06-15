@@ -51,7 +51,6 @@ const styles = {
     },
     img : {
         height: 110,
-        widht: 110,
         resizeMode: "contain",
         alignSelf: "center",
         marginBottom : hp('2'),

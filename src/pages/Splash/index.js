@@ -45,15 +45,14 @@ const styles = {
         elevation: 30,
     },
     logo : {
-        marginTop: 5,
         resizeMode: "center",
-        width: 110,
-        height: 110, 
+        width: 90,
+        height: 90, 
         alignSelf: "center",
     },
     boxlogo : {
-        width: 110,
-        height: 110, 
+        width: 90,
+        height: 90, 
         alignSelf: 'center',
         shadowColor: "#000",
         shadowOffset: {

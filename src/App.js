@@ -23,7 +23,7 @@ import { colors } from './utils';
 import { WelcomePage1, NavigationBar } from './pages';
 
 const App = () => {
-  console.disableYellowBox = true;
+  console.disableYellowBox = false;
     return (
       <Provider store={store}>
       <NavigationContainer>
