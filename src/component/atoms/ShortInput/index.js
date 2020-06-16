@@ -4,16 +4,14 @@ import { colortext, colors, icons } from '../../../utils';
 import { Icon } from 'react-native-elements';
 import CardView from 'react-native-cardview'
 
-const LoginInput =({placeholder, icon, ...rest}) => {
+const ShortInput =({placeholder, icon, ...rest}) => {
     return (
     
-        <CardView style={styles.card} cardElevation={2} cardMaxElevation={2} cornerRadius={12}>
-            <Icon iconStyle={styles.icon} name={icon} size={20} color={icons.icon}/>
+        <CardView style={styles.card} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
             <TextInput style={styles.input} 
                 placeholder={placeholder} 
                 placeholderTextColor={colortext.gray}
                 {...rest}
-                keyboardType={"email-address"}
             />
         </CardView>
     
@@ -21,25 +19,21 @@ const LoginInput =({placeholder, icon, ...rest}) => {
 }
 
 const styles = {
-    icon : {
-        marginVertical: 12,
-        marginLeft:12
-    },
     card :{
-        flexDirection: 'row',
-        height: 47, 
-        marginHorizontal: 20, 
-        marginBottom: 15
+        height: 43, 
+        marginHorizontal: 14, 
+        marginTop: 10,
+        opacity:0.6
     },
     input : {
-        backgroundColor:colors.white1,
+        backgroundColor:colors.gray4,
         paddingVertical: 8,
-        paddingHorizontal: 20,
-        borderRadius: 12,
+        paddingHorizontal: 15,
+        borderRadius: 9,
         fontSize: 14,
         fontWeight: 'normal',
-        flex:1
+        flex:1,
     }
 }
 
-export default LoginInput;
+export default ShortInput;

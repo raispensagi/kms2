@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Draft = () => {
+const TambahNotifikasi = () => {
     return(
         <View>
 
         </View>
     )
 }
-export default Draft;
+export default TambahNotifikasi;

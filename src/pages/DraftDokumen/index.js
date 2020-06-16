@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {Picker} from '@react-native-community/picker';
 import CardView from "react-native-cardview";
 import { colors, colortext } from '../../utils';
-const TambahDokumen = ({navigation}) => {
+const DraftDokumen = ({navigation}) => {
     const [form, setForm] = useState({
         judul: '',
         penulis:'',
@@ -24,7 +24,7 @@ const TambahDokumen = ({navigation}) => {
             kategori: selectedValue,
         })
     }
-    const draft = async (screen) => {
+    const postdraft = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
         if (form.judul==='') {
@@ -43,7 +43,7 @@ const TambahDokumen = ({navigation}) => {
             Alert.alert("Link unduh tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.file!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/edokumen/draft `,
+        fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/{id}`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -56,48 +56,6 @@ const TambahDokumen = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            Alert.alert('Konten disimpan ke draft')
-            navigation.replace(screen)
-        }
-        )
-        .catch((error) => {
-            console.error(error);
-        });
-    }
-    };
-    const simpan = async (screen) => {
-        const token = await AsyncStorage.getItem('userToken')
-        const userToken = JSON.parse(token) 
-        if (form.judul==='') {
-            Alert.alert("Judul tidak boleh kosong")
-        }
-        if (form.penulis==='') {
-            Alert.alert("Penulis tidak boleh kosong")
-        }
-        if (form.tahun==='') {
-            Alert.alert("Tahun tidak boleh kosong")
-        }
-        if (form.penerbit==='') {
-            Alert.alert("Penerbit tidak boleh kosong")
-        }
-        if (form.file==='') {
-            Alert.alert("Link unduh tidak boleh kosong")
-        }
-        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.file!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/edokumen/post`,
-        {
-            method:"POST",
-            headers: new Headers ( {
-                Authorization : 'Bearer ' + userToken,
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            }),
-            body: JSON.stringify(form)
-        })
-        .then((response) => response.json())
-        .then((responseJson) => {
-            console.log(responseJson)
-            Alert.alert('Konten telah dibagikan')
             navigation.replace(screen)
         }
         )
@@ -136,8 +94,8 @@ const TambahDokumen = ({navigation}) => {
             </CardView>
             <LongInput placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan' title2='Bagikan' 
-                        onPress1={()=> draft('Daftar Draft')}
-                        onPress2={()=> simpan('KMS Sawi')}
+                        onPress1={()=> postdraft('KMS Sawit')}
+                        onPress2={()=> editdraft('Daftar Draft')}
 
             />
         </ScrollView>
@@ -157,4 +115,4 @@ const styles = {
     opacity:0.6
   }
 };
-export default TambahDokumen;
+export default DraftDokumen;

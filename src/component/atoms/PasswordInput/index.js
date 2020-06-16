@@ -20,7 +20,7 @@ const PasswordInput =({placeholder, icon, ...rest}) => {
             <TextInput style={styles.input} 
                 secureTextEntry={hide}
                 placeholder={placeholder} 
-                placeholderTextColor={colortext.black}
+                placeholderTextColor={colortext.gray}
                 {...rest}
             />
             <Icon onPress= {changeIcon} containerStyle={styles.iconeye} name={iconEye} size={20} color={coloreye}/>
@@ -35,7 +35,7 @@ const styles = {
         marginLeft:12
     },
     iconeye : {
-        flexDirection: 'row', justifyContent: 'flex-end'
+        flexDirection: 'row', justifyContent: 'flex-end', marginRight:20
     },
     card :{
         flexDirection: 'row',
@@ -46,11 +46,12 @@ const styles = {
     input : {
         backgroundColor:colors.white1,
         paddingVertical: 8,
+        paddingRight:10,
         paddingLeft: 20,
-        paddingRight: 47,
         borderRadius: 12,
         fontSize: 14,
-        fontWeight: 'normal'
+        fontWeight: 'normal',
+        flex:1
     }
 }
 

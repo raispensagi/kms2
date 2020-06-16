@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft} from '../pages';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft, TambahNotifikasi, DaftarDraft, DraftDokumen} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../utils';
 import { Icon } from 'react-native-elements';
@@ -44,10 +44,12 @@ const Router = () => {
             <Stack.Screen name= 'Artikel' component={PageArtikel}/>
             <Stack.Screen name= 'Notifikasi' component={PageNotifikasi}/>
             <Stack.Screen name= 'Tambah Artikel' component={TambahArtikel}/>
-            <Stack.Screen name= 'Tambah Dokumen' component={TambahDokumen}/>
+            <Stack.Screen name= 'Tambah E-Dokumen' component={TambahDokumen}/>
             <Stack.Screen name= 'Tambah Video' component={TambahVideo}/>
             <Stack.Screen name= 'Screen' component={Screen}/>
-            <Stack.Screen name= 'Draft' component={Draft}/>
+            <Stack.Screen name= 'Daftar Draft' component={DaftarDraft}/>
+            <Stack.Screen name= 'Draft EDokumen' component={DraftDokumen}/>
+            <Stack.Screen name= 'Tambah Notifikasi' component={TambahNotifikasi}/>
         </Stack.Navigator>
     );
 };

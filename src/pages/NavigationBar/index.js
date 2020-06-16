@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil, Riwayat, Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, Draft, Screen} from '..';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil, Riwayat, Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, Draft, Screen, DaftarDraft} from '..';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../../utils';
 import { Icon } from 'react-native-elements';
@@ -41,7 +41,7 @@ const NavigationBar=()=> {
       />
       <Tab.Screen
         name="Draft"
-        component={Draft}
+        component={DaftarDraft}
         options={{
           tabBarLabel: 'Draft',
           tabBarIcon: ({color}) => (

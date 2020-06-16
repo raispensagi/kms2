@@ -21,9 +21,13 @@ import TambahDokumen from './TambahDokumen';
 import TambahArtikel from './TambahArtikel';
 import TambahVideo from './TambahVideo';
 import Screen from './Screen';
-import Draft from './Draft';
+import TambahNotifikasi from './TambahNotifikasi';
+import DaftarDraft from './DaftarDraft';
+import DraftDokumen from './DraftDokumen';
 export {
-    Draft,
+    DraftDokumen,
+    DaftarDraft,
+    TambahNotifikasi,
     Screen,
     PageNotifikasi,
     TambahArtikel,

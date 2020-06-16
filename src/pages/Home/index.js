@@ -74,22 +74,24 @@ const Home = ({navigation}) => {
             />
             <ActionButton   backgroundTappable={true} 
                             buttonColor={colors.red} 
-                            spacing={7} 
-                            active={true}
+                            spacing={7}
                             offsetX={15}
                             offsetY={15}
                             buttonTextStyle={{fontSize:30}}
-                            backdrop={
-                                <View
-                                    style={{flex:1,
-                                            backgroundColor:'#000000',
-                                            opacity:0.7}}
-                                    />
-                            }
+                            bgColor="rgba(0,0,0,.5)"
                             useNativeFeedback={false}>
                 <ActionButton.Item  spaceBetween={10} 
                                     textContainerStyle={{borderRadius:5}} 
-                                    buttonColor={colors.red} title="Artikel" 
+                                    buttonColor={colors.green4} 
+                                    title="Notifikasi" 
+                                    onPress={() => navigation.navigate("Tambah Notifikasi")}
+                                    textStyle={{fontFamily:'Nunito'}}
+                                    useNativeFeedback={false}>
+                    <Icon name="notifications" color={colors.white1} size={21} />
+                </ActionButton.Item>
+                <ActionButton.Item  spaceBetween={10} 
+                                    textContainerStyle={{borderRadius:5}} 
+                                    buttonColor={colors.orange} title="Artikel" 
                                     onPress={ ()=>navigation.navigate('Tambah Artikel')}
                                     textStyle={{fontFamily:'Nunito'}}
                                     useNativeFeedback={false}>
@@ -97,7 +99,7 @@ const Home = ({navigation}) => {
                 </ActionButton.Item>
                 <ActionButton.Item  spaceBetween={10} 
                                     textContainerStyle={{borderRadius:5}} 
-                                    buttonColor={colors.orange} 
+                                    buttonColor={colors.green4} 
                                     title="Video" 
                                     onPress={() => navigation.navigate("Tambah Video")}
                                     textStyle={{fontFamily:'Nunito'}}
@@ -107,9 +109,9 @@ const Home = ({navigation}) => {
                 </ActionButton.Item>
                 <ActionButton.Item  spaceBetween={10} 
                                     textContainerStyle={{borderRadius:5}} 
-                                    buttonColor={colors.green4} 
+                                    buttonColor={colors.orange} 
                                     title="E-Dokumen" 
-                                    onPress={() => navigation.navigate("Tambah Dokumen")}
+                                    onPress={() => navigation.navigate("Tambah E-Dokumen")}
                                     textStyle={{fontFamily:'Nunito'}}
                                     useNativeFeedback={false}>
                     <Icon name="dvr" color={colors.white1} size={21} />
