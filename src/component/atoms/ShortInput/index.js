@@ -4,14 +4,15 @@ import { colortext, colors, icons } from '../../../utils';
 import { Icon } from 'react-native-elements';
 import CardView from 'react-native-cardview'
 
-const ShortInput =({placeholder, icon, ...rest}) => {
+const ShortInput =({placeholder, value, icon, ...rest}) => {
     return (
     
         <CardView style={styles.card} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
-            <TextInput style={styles.input} 
+            <TextInput style={styles.input}
                 placeholder={placeholder} 
                 placeholderTextColor={colortext.gray}
                 {...rest}
+                defaultValue={value}
             />
         </CardView>
     

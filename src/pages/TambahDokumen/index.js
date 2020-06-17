@@ -24,7 +24,7 @@ const TambahDokumen = ({navigation}) => {
             kategori: selectedValue,
         })
     }
-    const draft = async (screen) => {
+    const simpan = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
         if (form.judul==='') {
@@ -65,7 +65,7 @@ const TambahDokumen = ({navigation}) => {
         });
     }
     };
-    const simpan = async (screen) => {
+    const bagikan = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
         if (form.judul==='') {
@@ -97,6 +97,7 @@ const TambahDokumen = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            console.log(form)
             Alert.alert('Konten telah dibagikan')
             navigation.replace(screen)
         }
@@ -110,12 +111,12 @@ const TambahDokumen = ({navigation}) => {
     return(
         <ScrollView>
             <ShortInput placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
-            <ShortInput placeholder='Penulis' onChangeText={value=>onInputChange(value, 'penulis')}/>
-            <ShortInput placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
-            <ShortInput placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
-            <ShortInput placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
-            <ShortInput placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
-            <ShortInput placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
+            <ShortInput  placeholder='Penulis' onChangeText={value=>onInputChange(value, 'penulis')}/>
+            <ShortInput  placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
+            <ShortInput  placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
+            <ShortInput  placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
+            <ShortInput  placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
+            <ShortInput  placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
             <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
@@ -134,10 +135,10 @@ const TambahDokumen = ({navigation}) => {
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
             </CardView>
-            <LongInput placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
+            <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan' title2='Bagikan' 
-                        onPress1={()=> draft('Daftar Draft')}
-                        onPress2={()=> simpan('KMS Sawi')}
+                        onPress1={()=> simpan('Daftar Draft')}
+                        onPress2={()=> bagikan('KMS Sawi')}
 
             />
         </ScrollView>
