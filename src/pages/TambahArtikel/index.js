@@ -118,8 +118,8 @@ const TambahArtikel = ({navigation}) => {
             <LongInput  placeholder='Isi artikel' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View>
             <AddButton  title1='Simpan' title2='Bagikan' 
-                        onPress1={()=> simpan('KMS Sawi')}
-                        onPress2={()=> bagikan('KMS Sawi')}
+                        onPress1={()=> simpan('KMS Sawit')}
+                        onPress2={()=> bagikan('KMS Sawit')}
 
             />
             </View>
