@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft, TambahNotifikasi, DaftarDraft, DraftDokumen} from '../pages';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft, TambahNotifikasi, DaftarDraft, DraftDokumen, DraftArtikel, DraftVideo} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../utils';
 import { Icon } from 'react-native-elements';
@@ -49,6 +49,8 @@ const Router = () => {
             <Stack.Screen name= 'Screen' component={Screen}/>
             <Stack.Screen name= 'Daftar Draft' component={DaftarDraft}/>
             <Stack.Screen name= 'Draft EDokumen' component={DraftDokumen}/>
+            <Stack.Screen name= 'Draft Artikel' component={DraftArtikel}/>
+            <Stack.Screen name= 'Draft Video' component={DraftVideo}/>
             <Stack.Screen name= 'Tambah Notifikasi' component={TambahNotifikasi}/>
         </Stack.Navigator>
     );

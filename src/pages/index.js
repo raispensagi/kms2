@@ -24,7 +24,11 @@ import Screen from './Screen';
 import TambahNotifikasi from './TambahNotifikasi';
 import DaftarDraft from './DaftarDraft';
 import DraftDokumen from './DraftDokumen';
+import DraftArtikel from './DraftArtikel';
+import DraftVideo from './DraftVideo';
 export {
+    DraftVideo,
+    DraftArtikel,
     DraftDokumen,
     DaftarDraft,
     TambahNotifikasi,
