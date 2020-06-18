@@ -30,7 +30,7 @@ const styles = {
         },
         shadowOpacity: 0.2,
         shadowRadius: 5,
-        elevation: 20,
+        elevation: 2,
         width:120
     },
     button2 : {
@@ -43,7 +43,7 @@ const styles = {
         },
         shadowOpacity: 0.2,
         shadowRadius: 5,
-        elevation: 20,
+        elevation: 2,
         width:120
     },
     text : {

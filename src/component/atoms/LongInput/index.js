@@ -22,7 +22,7 @@ const LongInput =({value, placeholder, icon, ...rest}) => {
 
 const styles = {
     card :{
-        height: 170, 
+        height: 230, 
         marginHorizontal: 14, 
         marginTop: 10,
         opacity:0.6
