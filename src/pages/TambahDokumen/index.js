@@ -21,7 +21,7 @@ const TambahDokumen = ({navigation}) => {
         setForm({
             ...form,
             [input]: value,
-            kategori: selectedValue,
+            kategori: selectedValue.toString(),
         })
     }
     const simpan = async (screen) => {
@@ -56,6 +56,7 @@ const TambahDokumen = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            console.log(form)
             Alert.alert('Konten disimpan ke draft')
             navigation.replace(screen)
         }

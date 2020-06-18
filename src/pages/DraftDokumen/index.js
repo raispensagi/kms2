@@ -6,11 +6,19 @@ import {Picker} from '@react-native-community/picker';
 import CardView from "react-native-cardview";
 import { colors, colortext } from '../../utils';
 import { FlatList } from 'react-native-gesture-handler';
-import { DokumenPage } from '../../template';
 const DraftDokumen = ({route, navigation}) => {
     const {id} = route.params;
-    const [form, setForm] = useState([]);
-    const [formsend, setFormSend] = useState([]);
+    const [form, setForm] = useState({
+        judul: '',
+        penulis:'',
+        tahun:'',
+        penerbit:'',
+        halaman:'',
+        bahasa:'',
+        deskripsi:'',
+        file:'',
+        kategori:'',
+    });
     const [loading,setLoading]= useState(true)
     const postdraft = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
@@ -84,6 +92,7 @@ const DraftDokumen = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            console.log(form)
             navigation.replace(screen)
         }
         )
@@ -92,23 +101,31 @@ const DraftDokumen = ({route, navigation}) => {
         });
     }
     };
-    const [selectedValue, setSelectedValue] = useState(["Pendahuluan terkait Kelapa Sawit"]);
-    // const [judul, setJudul]=useState()
-    // const [penulis, setPenulis]=useState()
-    // const [tahun, setTahun]=useState()
-    // const [penerbit, setPenerbit]=useState()
-    // const [halaman, setHalaman]=useState()
-    // const [bahasa, setBahasa]=useState()
-    // const [deskripsi, setDeskripsi]=useState()
-    // const [file, setFile]=useState()
-    // const [kategori, setKategori]=useState()
+    const [selectedValue, setSelectedValue] = useState([]);
+    const [judul, setJudul]=useState()
+    const [penulis, setPenulis]=useState()
+    const [tahun, setTahun]=useState()
+    const [penerbit, setPenerbit]=useState()
+    const [halaman, setHalaman]=useState()
+    const [bahasa, setBahasa]=useState()
+    const [deskripsi, setDeskripsi]=useState()
+    const [file, setFile]=useState()
     const onInputChange = (value, input) => {
         setFormSend({
-            ...form,
+            'judul':judul,
+            'penulis':penulis,
+            'tahun':tahun,
+            'penerbit':penerbit,
+            'halaman':halaman,
+            'bahasa':bahasa,
+            'deskripsi':deskripsi,
+            'file':file,
             [input]: value,
-            kategori:selectedValue
+            kategori:selectedValue,
         })
+        
     }
+    const [formsend, setFormSend]= useState({})
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
@@ -121,9 +138,18 @@ const DraftDokumen = ({route, navigation}) => {
             })
             .then((response) => response.json())
             .then((responseJson) => {
-                setLoading(false)
-                setForm(responseJson.konten)
-                console.log(responseJson.konten)
+                setLoading(false),
+                console.log(responseJson.konten.map(value=> value.kategori))
+                setForm(responseJson.konten),
+                setJudul(responseJson.konten.map(value=> value.judul).toString()),
+                setBahasa(responseJson.konten.map(value => value.konten.map(val=> val.bahasa)).toString()),
+                setDeskripsi(responseJson.konten.map(value => value.konten.map(val=> val.deskripsi)).toString()),
+                setFile(responseJson.konten.map(value => value.konten.map(val=> val.file)).toString()),
+                setHalaman(responseJson.konten.map(value => value.konten.map(val=> val.halaman)).toString()),
+                setSelectedValue(responseJson.konten.map(value=> value.kategori).toString()),
+                setPenerbit(responseJson.konten.map(value => value.konten.map(val=> val.penerbit)).toString()),
+                setPenulis(responseJson.konten.map(value => value.konten.map(val=> val.penulis)).toString()),
+                setTahun(responseJson.konten.map(value => value.konten.map(val=> val.tahun)).toString()) 
             }
             )
             .catch((error) => {
@@ -143,21 +169,15 @@ const DraftDokumen = ({route, navigation}) => {
         )
         } 
         return (
-            <SafeAreaView>
-                <FlatList
-                    showsVerticalScrollIndicator={false}
-                    data={form}
-                    extraData={formsend}
-                    renderItem={({item}) => 
-                    <>
-                        <ShortInput value={item.judul} placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
-                        <ShortInput value={item.konten.map(value => value.penulis).toString()} placeholder='Penulis' onChangeText={value=>onInputChange(value, 'penulis')}/>
-                        <ShortInput value={item.konten.map(value => value.tahun).toString()} placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
-                        <ShortInput value={item.konten.map(value => value.penerbit).toString()} placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
-                        <ShortInput value={item.konten.map(value => value.halaman).toString()} placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
-                        <ShortInput value={item.konten.map(value => value.bahasa).toString()} placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
-                        <ShortInput value={item.konten.map(value => value.file).toString()} placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
-                        <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <ShortInput value={judul} placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
+                <ShortInput value={penulis} placeholder='Penulis' onChangeText={value=>onInputChange(value, 'peulis')}/>
+                <ShortInput value={tahun} placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
+                <ShortInput value={penerbit} placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
+                <ShortInput value={halaman} placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
+                <ShortInput value={bahasa} placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
+                <ShortInput value={file} placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
+                <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                             <Picker
                                 itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                                 selectedValue={selectedValue}
@@ -175,19 +195,12 @@ const DraftDokumen = ({route, navigation}) => {
                                 <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                             </Picker>
                         </CardView>
-                        <LongInput placeholder='Deskripsi' value={item.konten.map(value => value.deskripsi).toString()} onChangeText={value=>onInputChange(value, 'deskripsi')}/>
-                    </>
-                    }
-                    keyExtractor={item => item.id.toString()}
-                    ListFooterComponent={
-                        <AddButton  title1='Simpan' title2='Bagikan' 
-                        onPress1={()=> editdraft('Daftar Draft')}
-                        onPress2={()=> postdraft('KMS Sawi')}
+                        <LongInput placeholder='Deskripsi' value={deskripsi} onChangeText={value=>onInputChange(value, 'deskripsi')}/>
+                <AddButton  title1='Simpan' title2='Bagikan' 
+                        onPress1={()=> editdraft('KMS Sawit')}
+                        onPress2={()=> postdraft('KMS Sawit')}
                         />
-                    }
-                />
-                
-            </SafeAreaView>
+            </ScrollView>
         )
 }
                      
