@@ -26,7 +26,9 @@ import DaftarDraft from './DaftarDraft';
 import DraftDokumen from './DraftDokumen';
 import DraftArtikel from './DraftArtikel';
 import DraftVideo from './DraftVideo';
+import EditProfil from './EditProfil';
 export {
+    EditProfil,
     DraftVideo,
     DraftArtikel,
     DraftDokumen,

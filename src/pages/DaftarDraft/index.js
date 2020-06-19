@@ -82,7 +82,7 @@ const DaftarDraft = ({navigation}) => {
                 <BoxKontenVideo  kategori={item.tipe} 
                             title={item.judul} 
                             isi={item.penulis.map(value => value.nama)}
-                            onPress={()=> navigation.navigate('Draft ' + item.tipe.toString(), {id:item.id})}
+                            onPress={()=> navigation.navigate('Edit Draft ' + item.tipe.toString(), {id:item.id})}
                             />}
                 keyExtractor={item => item.id.toString()}
             />
