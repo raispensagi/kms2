@@ -7,29 +7,23 @@ import CardView from "react-native-cardview";
 import { colors, colortext } from '../../utils';
 const DraftVideo = ({route, navigation}) => {
     const {id} = route.params;
-    const [form, setForm] = useState({
-        judul: '',
-        kategori:'',
-        isi:'',
-        video_audio:''
-    });
     const [loading,setLoading]= useState(true)
     const postdraft = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
-        if (form.judul==='') {
+        if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
+        if (formsend.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (form.kategori==='') {
+        if (formsend.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
-        if (form.video_audio==='') {
+        if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (form.judul!=='' && form.isi!=='' && form.kategori!=='' && form.video_audio!=='') {
+        if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='' && formsend.video_audio!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
         {
             method:"POST",
@@ -54,19 +48,19 @@ const DraftVideo = ({route, navigation}) => {
     const editdraft = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
-        if (form.judul==='') {
+        if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
+        if (formsend.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (form.kategori==='') {
+        if (formsend.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
-        if (form.video_audio==='') {
+        if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (form.judul!=='' && form.isi!=='' && form.kategori!=='' && form.video_audio!=='') {
+        if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='' && formsend.video_audio!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
         {
             method:"POST",
@@ -80,7 +74,6 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            console.log(formsend)
             navigation.replace(screen)
         }
         )
@@ -103,6 +96,15 @@ const DraftVideo = ({route, navigation}) => {
             kategori:selectedValue,
         })
     }
+    const onInputChangekategori = (value, input) => {
+        setSelectedValue(value)
+        setFormSend({
+            'judul': judul,
+            "video_audio":video_audio,
+            'isi':isi,
+            [input]: value,
+        })
+    }
     const [formsend, setFormSend]= useState({})
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
@@ -117,8 +119,6 @@ const DraftVideo = ({route, navigation}) => {
             .then((response) => response.json())
             .then((responseJson) => {
                 setLoading(false),
-                console.log(responseJson.konten.map(value => value.konten.map(val=> val.video_audio)).toString())
-                setForm(responseJson.konten),
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setIsi(responseJson.konten.map(value => value.konten.map(val=> val.isi)).toString()),
                 setVideo(responseJson.konten.map(value => value.konten.map(val=> val.video_audio)).toString()),
@@ -151,7 +151,7 @@ const DraftVideo = ({route, navigation}) => {
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
                     style={{ width: 320, opacity:0.6,  marginTop:-3}}
-                    onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                    onValueChange={(itemValue, itemIndex) => onInputChangekategori(itemValue, 'kategori')}
                     mode='dropdown'
                 >
                     <Picker.Item label="Pendahuluan terkait Kelapa Sawit" value="Pendahuluan terkait Kelapa Sawit" />

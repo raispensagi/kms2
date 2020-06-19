@@ -92,7 +92,7 @@ const DraftDokumen = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            console.log(form)
+            console.log(formsend)
             navigation.replace(screen)
         }
         )
@@ -123,7 +123,20 @@ const DraftDokumen = ({route, navigation}) => {
             [input]: value,
             kategori:selectedValue,
         })
-        
+    }
+    const onInputChangeKategori = (value, input) => {
+        setSelectedValue(value)
+        setFormSend({
+            'judul':judul,
+            'penulis':penulis,
+            'tahun':tahun,
+            'penerbit':penerbit,
+            'halaman':halaman,
+            'bahasa':bahasa,
+            'deskripsi':deskripsi,
+            'file':file,
+            [input]: value,
+        })
     }
     const [formsend, setFormSend]= useState({})
     const getData = async () => {
@@ -182,7 +195,7 @@ const DraftDokumen = ({route, navigation}) => {
                                 itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                                 selectedValue={selectedValue}
                                 style={{ width: 320, opacity:0.6,  marginTop:-3}}
-                                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                                onValueChange={(itemValue, itemIndex) => onInputChangeKategori(itemValue, 'kategori')}
                                 mode='dropdown'
                             >
                                 <Picker.Item label="Pendahuluan terkait Kelapa Sawit" value="Pendahuluan terkait Kelapa Sawit" />
