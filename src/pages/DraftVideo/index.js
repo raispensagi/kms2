@@ -37,7 +37,7 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {
@@ -74,7 +74,7 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {

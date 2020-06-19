@@ -34,7 +34,7 @@ const DraftArtikel = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {
@@ -69,7 +69,7 @@ const DraftArtikel = ({route, navigation}) => {
         .then((responseJson) => {
             console.log(responseJson)
             console.log(formsend)
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {

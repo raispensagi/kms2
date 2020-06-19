@@ -41,7 +41,7 @@ const TambahNotifikasi = ({navigation}) => {
         .then((responseJson) => {
             console.log(responseJson)
             Alert.alert('Notifikasi telah dibuat')
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {

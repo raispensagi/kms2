@@ -58,7 +58,7 @@ const TambahDokumen = ({navigation}) => {
             console.log(responseJson)
             console.log(form)
             Alert.alert('Konten disimpan ke draft')
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {
@@ -100,7 +100,7 @@ const TambahDokumen = ({navigation}) => {
             console.log(responseJson)
             console.log(form)
             Alert.alert('Konten telah dibagikan')
-            navigation.replace(screen)
+            navigation.goBack(screen)
         }
         )
         .catch((error) => {
