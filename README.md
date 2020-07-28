@@ -21,7 +21,15 @@ Fitur yang ada di aplikasi KMS Sawit :
   - Notifikasi
   
 ## **Tampilan Aplikasi**
-![Welcome Page](https://drive.google.com/file/d/1UGEObeA0MQ4SjLCFRCaM09L5wiErhlgI/view?usp=sharing)
+![Profil](KMSPenulis/Tampilan/12214832048783.jpg)
+
+![Beranda](KMSPenulis/Tampilan/12214832087873.jpg)
+
+![Login](KMSPenulis/Tampilan/12216831727710.jpg)
+
+![Welcome Page](KMSPenulis/Tampilan/12216831966010.jpg)
+![Welcome Page 2](KMSPenulis/Tampilan/12216832959828.jpg)
+![Welcome Page 3](KMSPenulis/Tampilan/12216832751778.jpg)
 
 ## **Download APK**
 
