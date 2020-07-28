@@ -21,6 +21,8 @@ Fitur yang ada di aplikasi KMS Sawit :
   - Notifikasi
   
 ## **Tampilan Aplikasi**
+[Prototype Aplikasi di Figma](https://bit.ly/KMSPakar)
+
 **Welcome page**
 
 <img src="/Tampilan/12216831966010.jpg" width="200" > <img src="/Tampilan/12216832959828.jpg" width="200"  >
