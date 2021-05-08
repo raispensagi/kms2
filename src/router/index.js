@@ -32,7 +32,7 @@ const Router = () => {
             <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
             <Stack.Screen name="Register" component={Register} options={{headerShown:false}}/>
             <Stack.Screen name="Beranda" component={Home} options={{headerShown:false}}/>
-            <Stack.Screen name="Daftar Notifikasi" component={DaftarNotifikasi}/>
+            <Stack.Screen name="Daftar Pengumuman" component={DaftarNotifikasi}/>
             <Stack.Screen name="Tersimpan" component={Tersimpan}/>
             <Stack.Screen name="Profil" component={Profil}/>
             <Stack.Screen name="Kategori Artikel" component={KategoriArtikel}/>
