@@ -117,7 +117,7 @@ const TambahArtikel = ({navigation}) => {
             </CardView>
             <LongInput  placeholder='Isi artikel' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View>
-            <AddButton  title1='Simpan' title2='Bagikan' 
+            <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('KMS Sawit')}
                         onPress2={()=> bagikan('KMS Sawit')}
 

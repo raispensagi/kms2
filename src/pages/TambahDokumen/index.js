@@ -137,7 +137,7 @@ const TambahDokumen = ({navigation}) => {
                 </Picker>
             </CardView>
             <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
-            <AddButton  title1='Simpan' title2='Bagikan' 
+            <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('Daftar Draft')}
                         onPress2={()=> bagikan('KMS Sawi')}
 
