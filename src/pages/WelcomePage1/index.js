@@ -33,7 +33,7 @@ const WelcomePage1 = ({navigation}) => {
                 <Image source={Red} style={{resizeMode: "contain",alignSelf: "center", height:230,}}/>
             </View>
             <View style={styles.button}>
-                <OrangeButton title="Lewati" onPress={() => handleGoTo('Login')}/>
+                <OrangeButton title="Lewati" onPress={() => handleGoTo('Register')}/>
                 <RedButton title="Lanjut" onPress={() => handleGoTo('WelcomePage2')}/>
             </View>
         </View>
