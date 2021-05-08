@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View , Text, SafeAreaView, StatusBar, RefreshControl} from 'react-native';
 import { colors, colortext } from '../../../utils';
 import { ImageCircle } from '../../atoms';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import { Bell } from '../../../assets';
 import {
     widthPercentageToDP as wp,
