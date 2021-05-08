@@ -40,7 +40,7 @@ const TambahNotifikasi = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            Alert.alert('Notifikasi telah dibuat')
+            Alert.alert('Pengumuman telah dibuat')
             navigation.goBack(screen)
         }
         )
@@ -51,8 +51,8 @@ const TambahNotifikasi = ({navigation}) => {
     };
     return(
         <View>
-            <ShortInput placeholder='Headline notifikasi' onChangeText={value=>onInputChange(value, 'headline')}/>
-            <LongInput placeholder='Isi notifikasi' onChangeText={value=>onInputChange(value, 'isi')}/>
+            <ShortInput placeholder='Headline pengumuman' onChangeText={value=>onInputChange(value, 'headline')}/>
+            <LongInput placeholder='Isi pengumuman' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View style={{marginRight:15, marginTop:10}}>
                 <RedButton title='Bagikan' onPress={()=> simpan('KMS Sawit')} />
             </View>
