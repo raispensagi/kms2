@@ -42,7 +42,7 @@ const Router = () => {
             <Stack.Screen name="Video" component={PageVideo}/>
             <Stack.Screen name= 'EDokumen' component={PageDokumen}/>
             <Stack.Screen name= 'Artikel' component={PageArtikel}/>
-            <Stack.Screen name= 'Notifikasi' component={PageNotifikasi}/>
+            <Stack.Screen name= 'Pengumuman' component={PageNotifikasi}/>
             <Stack.Screen name= 'Tambah Artikel' component={TambahArtikel}/>
             <Stack.Screen name= 'Tambah E-Dokumen' component={TambahDokumen}/>
             <Stack.Screen name= 'Tambah Video' component={TambahVideo}/>

@@ -55,7 +55,7 @@ const DaftarNotifikasi = ({jumlah,notif, navigation}) => {
                     <BoxNotifikasi  id={item.map(value => value.id)}
                                     name={item.map(value => value.headline)} 
                                     isi={item.map(value => value.isi).toString().slice(0,78)}
-                                    onPress={()=> navigation.navigate('Notifikasi', 
+                                    onPress={()=> navigation.navigate('Pengumuman', 
                                             {headline:item.map(value => value.headline),
                                              isi:item.map(value => value.isi),
                                             })}
