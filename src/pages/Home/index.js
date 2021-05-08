@@ -83,7 +83,7 @@ const Home = ({navigation}) => {
                 <ActionButton.Item  spaceBetween={10} 
                                     textContainerStyle={{borderRadius:5}} 
                                     buttonColor={colors.green4} 
-                                    title="Notifikasi" 
+                                    title="Pengumuman" 
                                     onPress={() => navigation.navigate("Tambah Pengumuman")}
                                     textStyle={{fontFamily:'Nunito'}}
                                     useNativeFeedback={false}>
