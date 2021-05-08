@@ -139,7 +139,7 @@ const TambahDokumen = ({navigation}) => {
             <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('Daftar Draft')}
-                        onPress2={()=> bagikan('KMS Sawi')}
+                        onPress2={()=> bagikan('KMS Sawit')}
 
             />
         </ScrollView>
