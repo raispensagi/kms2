@@ -87,7 +87,7 @@ const Notifikasi = ({notif, onPress, navigation}) => {
                         <View style={{flexDirection:"column",}}>
                             <View style={styles.button}>
                                 <View>
-                                    <Text style={styles.text}>{jumlah} Pengumuman</Text>
+                                    <Text style={styles.text} onPress={onPress}>{jumlah} Pengumuman</Text>
                                 </View>
                                 <View>
                                     <Text style={styles.lihat} onPress={onPress}>Lihat</Text>
@@ -96,7 +96,7 @@ const Notifikasi = ({notif, onPress, navigation}) => {
                         </View>
                     }
                     renderItem={({item}) => 
-                        <Text style={styles.notif}>{item.map(value => value.headline).slice(0, 40)}</Text>
+                        <Text style={styles.notif} onPress={onPress}>{item.map(value => value.headline).slice(0, 40)}</Text>
                                     }
                     keyExtractor={(item) => item.map(value => value.id).toString()}
                 />
