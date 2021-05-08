@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
 } from 'react-native';
 import { icons, colors } from '../../../utils';
 import { Icon } from 'react-native-elements';
@@ -12,6 +13,7 @@ import { set } from 'react-native-reanimated';
 
 
 function Item({ id }) {
+  
     const [selected, setSelected] = useState();
     const getData = async () => {
     const token = await AsyncStorage.getItem('userToken')
@@ -50,9 +52,11 @@ function Item({ id }) {
               }),
               body : JSON.stringify(bookmark)
           })
-          .then((response) => response.json())
+          .then((response) => response.json()) 
           .then((responseJson) => {
               setSelected('true');
+              Alert.alert("Konten berhasil disimpan ke dalam menu Tersimpan")
+              
           }
           )
           .catch((error) => {
@@ -76,13 +80,17 @@ function Item({ id }) {
           .then((response) => response.json())
           .then((responseJson) => {
               setSelected('false')
+              Alert.alert("Konten berhasil dihapus dari menu Tersimpan")
           }
           )
           .catch((error) => {
               console.error(error);
           });
       }
-    if (selected === 'true') {
+      
+    
+
+    if (selected === 'true') { 
       return(
         <Icon
         name='bookmark'
