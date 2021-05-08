@@ -84,7 +84,7 @@ const Home = ({navigation}) => {
                                     textContainerStyle={{borderRadius:5}} 
                                     buttonColor={colors.green4} 
                                     title="Notifikasi" 
-                                    onPress={() => navigation.navigate("Tambah Notifikasi")}
+                                    onPress={() => navigation.navigate("Tambah Pengumuman")}
                                     textStyle={{fontFamily:'Nunito'}}
                                     useNativeFeedback={false}>
                     <Icon name="notifications" color={colors.white1} size={21} />

@@ -51,7 +51,7 @@ const Router = () => {
             <Stack.Screen name= 'Edit Draft EDokumen' component={DraftDokumen}/>
             <Stack.Screen name= 'Edit Draft Artikel' component={DraftArtikel}/>
             <Stack.Screen name= 'Edit Draft Video' component={DraftVideo}/>
-            <Stack.Screen name= 'Tambah Notifikasi' component={TambahNotifikasi}/>
+            <Stack.Screen name= 'Tambah Pengumuman' component={TambahNotifikasi}/>
             <Stack.Screen name= 'Edit Profil' component={EditProfil}/>
         </Stack.Navigator>
     );
