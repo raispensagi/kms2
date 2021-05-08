@@ -5,7 +5,7 @@ import { colors, colortext } from '../../../utils';
 
 const AddButton = ({title1, title2, onPress1, onPress2}) => {
     return (
-        <View style={{marginHorizontal:10, marginVertical:10, marginLeft:90, flexDirection:'row', justifyContent:'space-around'}}> 
+        <View style={{marginHorizontal:10, marginVertical:10, flexDirection:'row', justifyContent:'space-around'}}> 
             <TouchableOpacity activeOpacity={0.8} onPress={onPress1}
                 style={styles.button1}>
                 <Text style={styles.text}> {title1} </Text>
@@ -31,7 +31,6 @@ const styles = {
         shadowOpacity: 0.2,
         shadowRadius: 5,
         elevation: 2,
-        width:120
     },
     button2 : {
         backgroundColor: colors.green4,
@@ -44,7 +43,6 @@ const styles = {
         shadowOpacity: 0.2,
         shadowRadius: 5,
         elevation: 2,
-        width:120
     },
     text : {
         color:colortext.white, 
