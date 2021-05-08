@@ -150,7 +150,7 @@ const TambahDokumen = ({navigation}) => {
 const styles = {
   container: {
     flex: 1,
-    alignItems: "center",
+    alignItems: "flex-start",
     backgroundColor: colors.gray4,
     opacity:0.6,
     height: 43, 
