@@ -45,7 +45,7 @@ const Register = ({navigation}) => {
                 console.log(data)
                 navigation.replace(screen)
             } catch (err) {
-                console.log('AsyncStorage Error: ' + error.message);
+                Alert.alert("Harap masukan email dengan benar")
             }
         })
     }
