@@ -42,9 +42,18 @@ const DaftarDraft = ({navigation}) => {
         console.error(error);
       });
   };
+  
   useEffect(() => {
-    getData();
-  }, []);
+    const unsubscribe = navigation.addListener('focus', () => {
+        getData();
+
+      console.log('kepanggil dari sini');
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
+  
   const [value, setValue] = useState();
   const searchFilterFunction = text => {
     setValue(text);

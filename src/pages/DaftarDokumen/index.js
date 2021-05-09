@@ -31,9 +31,17 @@ const DaftarDokumen = ({navigation}) => {
             console.error(error);
         });
     }
-    useEffect(()=> {
-        getData()
-    }, [])
+    
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            getData();
+    
+          console.log('kepanggil dari sini');
+        });
+    
+        return unsubscribe;
+      }, [navigation]);
+
     const [refreshing,setRefreshing]= useState(false)
     const onRefresh = useCallback( async ()=> {
         setRefreshing(true);

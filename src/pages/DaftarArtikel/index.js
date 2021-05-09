@@ -30,9 +30,16 @@ const DaftarArtikel = ({navigation}) => {
             console.error(error);
         });
     }
-    useEffect(()=> {
-        getData()
-    }, [])
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            getData();
+    
+          console.log('kepanggil dari sini');
+        });
+    
+        return unsubscribe;
+      }, [navigation]);
+      
     const [value, setValue] = useState()
     const searchFilterFunction = text => {
         setValue(text)
