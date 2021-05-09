@@ -31,11 +31,11 @@ const BoxNotifikasi = ({name, isi, onPress, id}) => {
         });
   }
     Alert.alert(
-          "Hapus notifikasi?",
+          "Hapus pengumuman?",
           " ",
         [
-          { text: "Batal", onPress: () => console.log("Batal Hapus Notifikasi") },
-          { text: "Hapus", onPress: () => remove() },
+          { text: "Batal", onPress: () => console.log("Batal Hapus Pengumuman") },
+          { text: "Hapus", onPress: () => remove(), },
         ],
         { cancelable: true },
           )
