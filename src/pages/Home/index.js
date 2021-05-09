@@ -159,7 +159,7 @@ const Home = ({navigation}) => {
           spaceBetween={10}
           textContainerStyle={{borderRadius: 5}}
           buttonColor={colors.green4}
-          title="Pengumuman"
+          title="Tambah Pengumuman"
           onPress={() => navigation.navigate('Tambah Pengumuman')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
@@ -169,7 +169,7 @@ const Home = ({navigation}) => {
           spaceBetween={10}
           textContainerStyle={{borderRadius: 5}}
           buttonColor={colors.orange}
-          title="Artikel"
+          title="Tambah Artikel"
           onPress={() => navigation.navigate('Tambah Artikel')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
@@ -179,7 +179,7 @@ const Home = ({navigation}) => {
           spaceBetween={10}
           textContainerStyle={{borderRadius: 5}}
           buttonColor={colors.green4}
-          title="Video"
+          title="Tambah Video"
           onPress={() => navigation.navigate('Tambah Video')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
@@ -189,7 +189,7 @@ const Home = ({navigation}) => {
           spaceBetween={10}
           textContainerStyle={{borderRadius: 5}}
           buttonColor={colors.orange}
-          title="E-Dokumen"
+          title="Tambah E-Dokumen"
           onPress={() => navigation.navigate('Tambah E-Dokumen')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
