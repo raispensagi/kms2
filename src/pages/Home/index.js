@@ -149,7 +149,10 @@ const Home = ({navigation}) => {
         spacing={7}
         offsetX={15}
         offsetY={15}
-        buttonTextStyle={{fontSize: 30}}
+        size={80}
+        position="center"
+        buttonText="+"
+        buttonTextStyle={{fontSize: 60}}
         bgColor="rgba(0,0,0,.5)"
         useNativeFeedback={false}>
         <ActionButton.Item
@@ -160,7 +163,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Tambah Pengumuman')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
-          <Icon name="notifications" color={colors.white1} size={21} />
+          <Icon name="notifications" color={colors.white1} size={40} />
         </ActionButton.Item>
         <ActionButton.Item
           spaceBetween={10}
@@ -170,7 +173,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Tambah Artikel')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
-          <Icon name="description" color={colors.white1} size={21} />
+          <Icon name="description" color={colors.white1} size={40} />
         </ActionButton.Item>
         <ActionButton.Item
           spaceBetween={10}
@@ -180,7 +183,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Tambah Video')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
-          <Icon name="videocam" color={colors.white1} size={23} />
+          <Icon name="videocam" color={colors.white1} size={40} />
         </ActionButton.Item>
         <ActionButton.Item
           spaceBetween={10}
@@ -190,7 +193,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Tambah E-Dokumen')}
           textStyle={{fontFamily: 'Nunito'}}
           useNativeFeedback={false}>
-          <Icon name="dvr" color={colors.white1} size={21} />
+          <Icon name="dvr" color={colors.white1} size={40} />
         </ActionButton.Item>
       </ActionButton>
     </View>
