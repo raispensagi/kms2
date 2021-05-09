@@ -70,10 +70,16 @@ const Profil = ({navigation}) => {
             console.error(error);
         });
     };
-    useEffect(()=> {
-        profil()
-        kontenpost()
-    },[])
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            profil();
+            kontenpost();
+    
+          console.log("kepanggil dari sini")
+        });
+        return unsubscribe;
+    }, [navigation]);
+
     const [refreshing,setRefreshing]= useState(false)
       const onRefresh = useCallback( async ()=> {
         setRefreshing(true);
