@@ -19,7 +19,7 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
     })
       .then(response => response.json())
       .then(responseJson => {
-        setNotifikasi(responseJson.notifikasi);
+        setNotifikasi(responseJson.notifikasi.reverse());
       })
       .catch(error => {
         console.error(error);

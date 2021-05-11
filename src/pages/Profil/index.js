@@ -63,7 +63,7 @@ const Profil = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             setLoading(false)
-            setKonten(responseJson.konten)
+            setKonten(responseJson.konten.reverse())
         }
         )
         .catch((error) => {

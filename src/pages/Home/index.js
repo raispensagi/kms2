@@ -52,7 +52,7 @@ const Home = ({navigation}) => {
     })
       .then(response => response.json())
       .then(responseJson => {
-        setData(responseJson.bookmark);
+        setData(responseJson.bookmark.reverse());
         console.log('DATA TERAKHIR' + JSON.stringify(responseJson));
       })
       .catch(error => {
@@ -75,9 +75,13 @@ const Home = ({navigation}) => {
       .then(response => response.json())
       .then(responseJson => {
         console.log("Notifikasi dipanggil "+JSON.stringify(responseJson))
-        setNotifikasi(responseJson.notifikasi.slice(0, 3));
+        setNotifikasi(responseJson.notifikasi.reverse().slice(0, 3));
         setJumlah(Object.keys(responseJson.notifikasi).length);
         console.log(Object.keys(responseJson.notifikasi).length);
+        console.log("====>")
+        console.log(responseJson.notifikasi)
+        console.log("<====")
+        console.log(responseJson.notifikasi.reverse())
       })
       .catch(error => {
         console.error(error);

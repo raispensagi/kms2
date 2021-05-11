@@ -23,7 +23,7 @@ const Tersimpan = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             setLoading(false)
-            setData(responseJson.bookmark)
+            setData(responseJson.bookmark.reverse())
             setArrayData(responseJson.bookmark)
         }
         )
