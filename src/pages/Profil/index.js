@@ -106,7 +106,7 @@ const Profil = ({navigation}) => {
                             kategori={item.tipe} 
                             title={item.judul}
                             isi={item.penulis.map(value=>value.nama)}
-                            onPressKonten={()=> navigation.navigate(item.tipe.toString(), {id:item.konten_id})}
+                            onPressKonten={()=> navigation.navigate(item.tipe.toString(), {id:item.id})}
                                     />}
                 keyExtractor={(item) => item.id.toString()}
                 ListHeaderComponent={
