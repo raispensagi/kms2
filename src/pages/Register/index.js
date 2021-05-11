@@ -45,7 +45,7 @@ const Register = ({navigation}) => {
                 console.log(data)
                 navigation.replace(screen)
             } catch (err) {
-                Alert.alert("Harap masukan email dengan benar")
+                Alert.alert("Masukan email dengan benar. Contoh : nama@gmail.com")
             }
         })
     }
@@ -61,7 +61,7 @@ const Register = ({navigation}) => {
                     value={form.fullName}
                     onChangeText={value=>onInputChange(value, 'nama')}
                 />
-                <LoginInput placeholder="Email" icon="email"
+                <LoginInput placeholder="Email" icon="email"s
                     value={form.email}
                     onChangeText={value=>onInputChange(value, 'email')}
                 />
