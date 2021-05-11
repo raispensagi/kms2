@@ -23,7 +23,7 @@ const DaftarDokumen = ({navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             setLoading(false)
-            setData(responseJson.konten)
+            setData(responseJson.konten.reverse())
             setArrayData(responseJson.konten)
         }
         )
