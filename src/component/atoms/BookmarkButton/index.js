@@ -94,16 +94,18 @@ function Item({ id }) {
       return(
         <Icon
         name='bookmark'
-          onPress={() => remove(id)} 
-          color= {colors.gray2 }
+        size={40}
+        onPress={() => remove(id)} 
+        color= {colors.gray2 }
         />
       )
     } else {
       return(
         <Icon
         name='bookmark-border'
+        size={40}
         onPress={() => add(id)} 
-          color= { colors.gray2}
+        color= { colors.gray2}
         />
       )
     }
@@ -112,7 +114,7 @@ function Item({ id }) {
 export default function BookmarkButton({id}) {
  return (
     <View style={{
-        marginTop: 10,
+        marginTop: 7,
         marginRight: 15
         }}>
           <Item
