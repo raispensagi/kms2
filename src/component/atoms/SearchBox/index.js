@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 const SearchBox = ({onChangeText, value}) => {
     return (
       <SearchBar
-        placeholder="Cari"
+        placeholder="Masukan kata yang ingin dicari"
         onChangeText={onChangeText}
         value={value}
         inputStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito'}}
