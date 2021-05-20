@@ -52,7 +52,6 @@ const DaftarArtikel = ({navigation}) => {
   const [value, setValue] = useState();
   const searchFilterFunction = text => {
     setValue(text);
-    // console.log(arraydata.find(text))
     const newData = arraydata.filter(item => {
       const itemData = `${item.judul.toUpperCase()} ${item.kategori.toUpperCase()} ${item.konten
         .map(value => value.isi)
