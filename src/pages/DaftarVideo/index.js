@@ -48,8 +48,6 @@ const DaftarVideo = ({navigation}) => {
     useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       getData();
-
-      console.log("kepanggil dari sini")
     });
 
     return unsubscribe;
@@ -67,6 +65,7 @@ const DaftarVideo = ({navigation}) => {
           return itemData.indexOf(textData) > -1;
         });
         setData (newData)
+        console.log(newData.length)
       };
     if (loading=== true) {
         return (
