@@ -105,7 +105,8 @@ const styles = {
         fontWeight: '700',
         fontSize: 13,
         marginTop: 10,
-        width:wp('70')
+        width:wp('70'),
+        textTransform:'capitalize',
     },
     textisi :{
         //    / color: colortext.white,

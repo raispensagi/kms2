@@ -114,8 +114,8 @@ function Item({ id }) {
 export default function BookmarkButton({id}) {
  return (
     <View style={{
-        marginTop: 7,
-        marginRight: 15
+        marginTop: 0,
+        marginRight: 0
         }}>
           <Item
             id={id}

@@ -136,6 +136,7 @@ const styles = {
     color: colortext.white,
     fontSize: 13.5,
     width: wp('70'),
+    textTransform:'capitalize',
   },
   button: {
     flex: 1,

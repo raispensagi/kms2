@@ -88,6 +88,7 @@ const styles = {
     fontWeight: '700',
     fontSize: 15,
     marginTop: 10,
+    textTransform:'capitalize',
   },
   image: {
     height: 45,
