@@ -27,6 +27,7 @@ const styles = {
         fontWeight: 'normal',
         marginTop: 15,
         marginHorizontal: 12,
+        flexWrap: 'wrap',
     },
     image : {
         height:hp('30'),
@@ -60,7 +61,7 @@ const styles = {
         marginHorizontal: 10,
         width:wp('85'),
         marginLeft: 1, 
-        marginTop: 10,
+        marginTop: 6,
     }
 }
 export default NotifikasiPage;

@@ -20,7 +20,7 @@ function VideoPlayer  ({videoId, sumber, judul, id})  {
   const [quality, setQuality] = useState();
   const [error, setError] = useState();
     return (
-        <View style={styles.container}>
+      <View style={styles.container}>
         <YouTube
         apiKey="AIzaSyBa_gh3C-qpXu3IwK1c503-2vvFtPeKsvM"
         videoId={videoId} // The YouTube video ID
@@ -33,12 +33,18 @@ function VideoPlayer  ({videoId, sumber, judul, id})  {
         onError={e => setError(e.error)}
         style={styles.youtube}
         />
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.title}>{judul}</Text>        
-          <BookmarkButton id={id}/>
+        <View style={styles.wrap}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View style={{flexDirection:'column'}}>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text style={styles.judul}>{judul}</Text>
+                    <BookmarkButton id={id}/>
+                    </View>
+                    <Text style={styles.text}>Sumber : {sumber}</Text>
+                </View>
+            </View>
         </View>
-        <Text style={styles.sumber}>Sumber video channel youtube : {sumber}</Text>
-      </View>  
+    </View>
     );
   }
 
@@ -60,6 +66,16 @@ const styles = StyleSheet.create({
       marginTop: 10,
       width:wp(85)
     },
+    wrap: {
+      backgroundColor:colors.gray4,
+      paddingHorizontal: 15,
+      paddingVertical: 10, 
+      borderRadius: 9,
+      fontSize: 14,
+      fontWeight: 'normal',
+      marginTop: 15,
+      marginHorizontal: 12,
+  },
     sumber : {
       fontFamily: 'Nunito',
       fontWeight: '400',
@@ -67,6 +83,37 @@ const styles = StyleSheet.create({
       textAlign: 'justify',
       marginHorizontal: 10,
       color:colortext.gray
-    }
+    },
+    judul : {
+      marginLeft: 1, 
+      marginTop: 1,
+      fontFamily: 'Nunito',
+      fontWeight:'700',
+      fontSize: 16,
+      textAlign: 'justify' ,
+      flex: 1,
+      textTransform:'capitalize',
+  },
+  text : {
+      fontFamily: 'Nunito',
+      marginLeft: 1,
+      marginTop: 3,
+      fontWeight:'300',
+      fontSize: 14,
+      textAlign: 'justify',
+      marginHorizontal: 10,
+      width:wp('85'),
+      textTransform: 'capitalize',
+  },
+  isi : {
+      fontFamily: 'Nunito',
+      fontWeight:'300',
+      fontSize: 14,
+      textAlign: 'justify',
+      marginTop: 6,
+      marginLeft: 1,
+      width:wp('85'),
+      color: 'black',
+  }
 });
 export default VideoPlayer;

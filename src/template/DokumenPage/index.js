@@ -9,7 +9,7 @@ import {
   } from 'react-native-responsive-screen';
 import { Kelapa } from '../../assets';
 import { ScrollView } from 'react-native-gesture-handler';
-import { colors } from '../../utils';
+import { colortext, colors, icons } from '../../utils';
 import AsyncStorage from '@react-native-community/async-storage';
 const DokumenPage = ({judul, penulis, penerbit, tahun, bahasa, halaman, deskripsi, file}) => {
     return (
@@ -48,17 +48,19 @@ const DokumenPage = ({judul, penulis, penerbit, tahun, bahasa, halaman, deskrips
             </View>
           </View>
             <DownloadLButton url={file.toString()}/>
-            <Text style={styles.Ringkasan}>Ringkasan : </Text>
+            <View style={styles.wrap}>
+            <Text style={styles.Ringkasan}>Ringkasan </Text>
             <Text style={styles.ringkasanisi}>{deskripsi}</Text>
+            </View>
           </View>
       )
 }
 const styles = {
     wrapper :{
-        marginTop:7,
+        marginTop:10,
         marginBottom:5,
         flexDirection: 'row',
-        marginHorizontal: 7,
+        marginHorizontal: 12,
         borderRadius: 10,
         backgroundColor: colors.white1,
         shadowColor: "#000",
@@ -70,6 +72,16 @@ const styles = {
         shadowRadius: 10,
         elevation: 5
     },
+    wrap: {
+        backgroundColor:colors.gray4,
+        paddingHorizontal: 15,
+        paddingVertical: 10, 
+        borderRadius: 9,
+        fontSize: 14,
+        fontWeight: 'normal',
+        marginTop: 15,
+        marginHorizontal: 12,
+    },
     image : {
         height:hp('24'),
         width:wp('29'),
@@ -79,24 +91,27 @@ const styles = {
         fontFamily: 'Nunito',
         fontWeight:'300',
         fontSize: 14,
-        width:wp('41'),
+        width:wp('37'),
         textAlign: 'justify'
     },
     ringkasanisi : {
         fontFamily: 'Nunito',
         fontWeight:'300',
+        marginTop: 1,
+        marginLeft : 1,
         fontSize: 14,
         textAlign: 'justify',
         marginHorizontal: 10,
         marginBottom:10
     },
     Ringkasan : {
-        marginTop: 10,
+        marginTop: 1,
         fontFamily: 'Nunito',
         fontWeight:'500',
         fontSize: 16,
         textAlign: 'justify',
-        marginLeft : 10
+        marginLeft : 1,
+        fontWeight :'bold'
     }
 }
 export default DokumenPage;

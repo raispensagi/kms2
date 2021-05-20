@@ -70,7 +70,7 @@ const styles = {
         fontWeight:'300',
         fontSize: 14,
         textAlign: 'justify',
-        marginTop: 10,
+        marginTop: 6,
         marginLeft: 1,
         width:wp('85'),
         color: 'black',
