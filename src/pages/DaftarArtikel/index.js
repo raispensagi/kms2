@@ -18,6 +18,7 @@ import {
 import {Kelapa} from '../../assets';
 import {colors} from '../../utils';
 import AsyncStorage from '@react-native-community/async-storage';
+
 const DaftarArtikel = ({navigation}) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
