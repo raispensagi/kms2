@@ -35,10 +35,7 @@ const DaftarDokumen = ({navigation}) => {
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             getData();
-    
-          console.log('kepanggil dari sini');
         });
-    
         return unsubscribe;
       }, [navigation]);
 
@@ -64,7 +61,8 @@ const DaftarDokumen = ({navigation}) => {
     
           return itemData.indexOf(textData) > -1;
         });
-        setData (newData)
+        setData (newData);
+        console.log("data.length", newData.length);
       };
     if (loading===true) {
             return (

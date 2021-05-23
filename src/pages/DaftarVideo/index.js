@@ -64,8 +64,8 @@ const DaftarVideo = ({navigation}) => {
     
           return itemData.indexOf(textData) > -1;
         });
-        setData (newData)
-        console.log(newData.length)
+        setData (newData);
+        console.log("data.length", newData.length);
       };
     if (loading=== true) {
         return (

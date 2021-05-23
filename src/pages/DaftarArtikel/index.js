@@ -61,7 +61,7 @@ const DaftarArtikel = ({navigation}) => {
       return itemData.indexOf(textData) > -1;
     });
     setData(newData);
-    console.log(newData.length);
+    console.log("data.length", newData.length);
   };
   const [refreshing, setRefreshing] = useState(false);
   const onRefresh = useCallback(async () => {
