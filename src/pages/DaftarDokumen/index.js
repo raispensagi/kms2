@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const DaftarDokumen = ({navigation}) => {
     const [loading, setLoading]=useState(true)
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [arraydata, setArrayData]=useState([]);
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
@@ -75,24 +75,27 @@ const DaftarDokumen = ({navigation}) => {
     }
     return (
         <SafeAreaView style={{backgroundColor:colors.white1, flex:1}}>
-            
+           <SearchBox onChangeText={ text => searchFilterFunction(text)} value={value}/> 
+           {data.length < 1 ? (
+            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                <Text>Kata yang dicari tidak dapat ditemukan.</Text>
+                <Text>Cobalah memakai kata yang lainnya.</Text>
+            </View>): 
+            (
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={data}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
                 }
-                ListHeaderComponent= {
-                    <SearchBox onChangeText={ text => searchFilterFunction(text)} value={value}/>
-                }
-                renderItem={({item}) => 
+                renderItem={({item}) => (
                 <BoxKontenVideo  kategori={item.tipe}
                             title={item.judul} 
                             isi={item.konten.map(value => value.penerbit).toString()}
                             onPress={()=> navigation.navigate('EDokumen', {id:item.id})}
-                            />}
+                            />)}
                 keyExtractor={item => item.id.toString()}
-            />
+            />)}
         </SafeAreaView>
     )
 };

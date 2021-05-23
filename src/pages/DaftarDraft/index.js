@@ -21,7 +21,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const DaftarDraft = ({navigation}) => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [arraydata, setArrayData] = useState([]);
   const getData = async () => {
     const token = await AsyncStorage.getItem('userToken');
@@ -46,8 +46,6 @@ const DaftarDraft = ({navigation}) => {
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
         getData();
-
-      console.log('kepanggil dari sini');
     });
 
     return unsubscribe;
@@ -67,6 +65,7 @@ const DaftarDraft = ({navigation}) => {
       return itemData.indexOf(textData) > -1;
     });
     setData(newData);
+    console.log("data.length", newData.length);
   };
   const [refreshing, setRefreshing] = useState(false);
   const onRefresh = useCallback(async () => {
@@ -87,19 +86,21 @@ const DaftarDraft = ({navigation}) => {
   }
   return (
     <SafeAreaView style={{backgroundColor: colors.white1, flex: 1}}>
+      <SearchBox
+              onChangeText={text => searchFilterFunction(text)}
+              value={value}
+            />
+      {data.length < 1 ? (
+            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                <Text>Kata yang dicari tidak dapat ditemukan.</Text>
+                <Text>Cobalah memakai kata yang lainnya.</Text>
+            </View>): 
+            (
       <FlatList
         showsVerticalScrollIndicator={false}
         data={data}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-        ListHeaderComponent={
-          <>
-            <SearchBox
-              onChangeText={text => searchFilterFunction(text)}
-              value={value}
-            />
-          </>
         }
         renderItem={({item}) => (
           <BoxKontenVideoo
@@ -114,7 +115,7 @@ const DaftarDraft = ({navigation}) => {
           />
         )}
         keyExtractor={item => item.id.toString()}
-      />
+      />)}
     </SafeAreaView>
   );
 };

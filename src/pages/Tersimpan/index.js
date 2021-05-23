@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const Tersimpan = ({navigation}) => {
     const [loading, setLoading]=useState(true)
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [arraydata, setArrayData]=useState([]);
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
@@ -35,8 +35,6 @@ const Tersimpan = ({navigation}) => {
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             getData();
-    
-          console.log('kepanggil dari sini');
         });
     
         return unsubscribe;
@@ -52,7 +50,8 @@ const Tersimpan = ({navigation}) => {
     
           return itemData.indexOf(textData) > -1;
         });
-        setData (newData)
+        setData (newData);
+        console.log("data.length", newData.length);
       };
       const [refreshing,setRefreshing]= useState(false)
       const onRefresh = useCallback( async ()=> {
@@ -77,24 +76,27 @@ const Tersimpan = ({navigation}) => {
     }
     return (
         <SafeAreaView style={{backgroundColor:colors.white1, flex:1}}>
+            <SearchBox onChangeText={ text => searchFilterFunction(text)} value={value}/>
+            {data.length < 1 ? (
+            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+                <Text>Kata yang dicari tidak dapat ditemukan.</Text>
+                <Text>Cobalah memakai kata yang lainnya.</Text>
+            </View>): 
+            (
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={data}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
                 }
-                ListHeaderComponent= {
-                    <>
-                    <SearchBox onChangeText={ text => searchFilterFunction(text)} value={value}/>
-                    </> }
-                renderItem={({item}) => 
+                renderItem={({item}) => (
                 <BoxKontenVideoo  kategori={item.tipe} 
                             title={item.judul} 
                             isi={item.penulis.map(value=>value.nama)}
                             onPress={()=> navigation.navigate(item.tipe.toString(), {id:item.konten_id})}
-                            />}
+                            />)}
                 keyExtractor={item => item.id.toString()}
-            />
+            />)}
             </SafeAreaView>
     )
 };
