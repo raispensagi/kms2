@@ -80,7 +80,7 @@ const Tersimpan = ({navigation}) => {
             {data.length < 1 ? (
             <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
                 <Text>Kata yang dicari tidak dapat ditemukan.</Text>
-                <Text>Cobalah memakai kata yang lainnya.</Text>
+                <Text>Cobalah masukan kata yang lain.</Text>
             </View>): 
             (
             <FlatList
