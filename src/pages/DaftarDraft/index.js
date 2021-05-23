@@ -13,7 +13,7 @@ import {
   SearchBox,
   WhiteButton,
   BoxKonten,
-  BoxKontenVideo,
+  BoxKontenVideoo,
 } from '../../component/atoms';
 import {Kelapa} from '../../assets';
 import {colors} from '../../utils';
@@ -102,7 +102,7 @@ const DaftarDraft = ({navigation}) => {
           </>
         }
         renderItem={({item}) => (
-          <BoxKontenVideo
+          <BoxKontenVideoo
             kategori={item.tipe}
             title={item.judul}
             isi={item.penulis.map(value => value.nama)}

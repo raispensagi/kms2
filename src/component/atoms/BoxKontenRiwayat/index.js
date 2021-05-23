@@ -14,7 +14,7 @@ const BoxKontenRiwayat = ({title, onPressKonten, isi, kategori}) => {
             <View style={{marginHorizontal:10}}>
                 <Text style={styles.textkategori}>{kategori}</Text>
                 <Text style={styles.text}>{title}</Text>
-                <Text style={styles.textisi}>{isi}</Text>
+                <Text style={styles.textisi}>Penulis : {isi}</Text>
             </View>
         </TouchableOpacity>
     
@@ -55,7 +55,8 @@ const styles = {
         fontWeight: '600', 
         textAlign: 'justify',
         width:wp('72'),
-        marginBottom: 5
+        marginBottom: 5,
+        textTransform:'capitalize',
     },
     textkategori: {
         marginTop:6,

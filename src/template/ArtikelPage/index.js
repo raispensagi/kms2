@@ -64,6 +64,7 @@ const styles = {
         textAlign: 'justify',
         marginHorizontal: 10,
         width:wp('85'),
+        textTransform:'capitalize',
     },
     isi : {
         fontFamily: 'Nunito',

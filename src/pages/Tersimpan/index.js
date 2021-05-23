@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, SafeAreaView, ActivityIndicator, RefreshControl } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { SearchBox, WhiteButton, BoxKonten, BoxKontenVideo } from '../../component/atoms';
+import { SearchBox, WhiteButton, BoxKonten, BoxKontenVideoo } from '../../component/atoms';
 import { Kelapa } from '../../assets';
 import { colors } from '../../utils';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -88,7 +88,7 @@ const Tersimpan = ({navigation}) => {
                     <SearchBox onChangeText={ text => searchFilterFunction(text)} value={value}/>
                     </> }
                 renderItem={({item}) => 
-                <BoxKontenVideo  kategori={item.tipe} 
+                <BoxKontenVideoo  kategori={item.tipe} 
                             title={item.judul} 
                             isi={item.penulis.map(value=>value.nama)}
                             onPress={()=> navigation.navigate(item.tipe.toString(), {id:item.konten_id})}

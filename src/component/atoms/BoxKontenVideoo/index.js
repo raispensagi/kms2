@@ -8,7 +8,7 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
-const BoxKontenVideo = ({title,img, isi, kategori, onPress}) => {
+const BoxKontenVideoo = ({title,img, isi, kategori, onPress}) => {
     return (
     
     <TouchableOpacity style={styles.wrapper} activeOpacity={0.7} onPress={onPress}>
@@ -16,7 +16,7 @@ const BoxKontenVideo = ({title,img, isi, kategori, onPress}) => {
             <View>
                 <Text style={styles.textkategori}>{kategori}</Text>
                 <Text style={styles.text}>{title}</Text>
-                <Text style={styles.textisi}>Sumber : {isi}</Text>
+                <Text style={styles.textisi}>Penulis : {isi}</Text>
             </View>
         </TouchableOpacity>
     
@@ -63,4 +63,4 @@ const styles = {
     }
 
 }
-export default BoxKontenVideo;
+export default BoxKontenVideoo;

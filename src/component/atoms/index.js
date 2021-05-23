@@ -12,9 +12,10 @@ import BoxKontenRiwayat from './BoxKontenRiwayat';
 import BookmarkButton from './BookmarkButton';
 import DownloadButton from './DownloadButton';
 import BoxKontenVideo from './BoxKontenVideo';
+import BoxKontenVideoo from './BoxKontenVideoo';
 import PasswordInput from './PasswordInput';
 import AddButton from './AddButton';
 import ShortInput from './ShortInput';
 import LongInput from './LongInput';
 import Dropdown from './Dropdown'
-export {Dropdown, LongInput, ShortInput, AddButton, BoxKontenVideo, PasswordInput, DownloadButton, BoxKontenRiwayat, BookmarkButton, WhiteButton, SearchBox, ActionButton, BoxKonten, OrangeButton, RedButton, Konten, LoginInput, ImageCircle,ProfilBeranda};
+export {Dropdown, LongInput, ShortInput, AddButton, BoxKontenVideo,BoxKontenVideoo, PasswordInput, DownloadButton, BoxKontenRiwayat, BookmarkButton, WhiteButton, SearchBox, ActionButton, BoxKonten, OrangeButton, RedButton, Konten, LoginInput, ImageCircle,ProfilBeranda};
