@@ -29,7 +29,7 @@ const Loginmenu = ({navigation}) => {
 };
 const styles = {
     wrapper : {
-        marginTop: 50,
+        marginTop: 30,
         flexDirection:"row",
         justifyContent: 'center',
     },
