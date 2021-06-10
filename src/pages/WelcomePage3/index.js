@@ -34,7 +34,7 @@ const WelcomePage3 = ({navigation}) => {
                 <Image source={Red} style={{resizeMode: "contain",alignSelf: "center", height:190,}}/>
             </View>
             <View style={styles.button}>
-                <RedButton title="Lanjut" onPress={() => handleGoTo('Register')}/>
+                <RedButton title="Lanjut" onPress={() => handleGoTo('Loginmenu')}/>
             </View>
         </View>
     );

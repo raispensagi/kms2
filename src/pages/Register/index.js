@@ -72,8 +72,8 @@ const Register = ({navigation}) => {
             </View>
             <ActionButton title="Daftar" onPress={() => sendData('KMS Sawit')}/>
             <View style={styles.wrapper}>
-                <Text>Sudah memiliki akun?</Text>
-                <Text style={styles.textbutton} onPress={() => handleGoTo('Login')}> Masuk</Text>
+                <Text style={styles.textbutton}>Sudah memiliki akun?</Text>
+                <Text style={styles.textbutton1} onPress={() => handleGoTo('Login')}> Masuk</Text>
             </View>
         </KeyboardAwareScrollView>
     );
@@ -87,9 +87,12 @@ const styles = {
     },
     textbutton : {
         fontFamily: 'Nunito',
+        fontSize: 16,
+    },
+    textbutton1 : {
+        fontFamily: 'Nunito',
         fontWeight: 'bold',
-        fontSize: 14,
-        marginBottom: 20
+        fontSize: 16,
     }
 }
 export default Register;

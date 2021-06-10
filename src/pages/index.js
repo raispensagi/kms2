@@ -27,6 +27,7 @@ import DraftDokumen from './DraftDokumen';
 import DraftArtikel from './DraftArtikel';
 import DraftVideo from './DraftVideo';
 import EditProfil from './EditProfil';
+import Loginmenu from './Loginmenu';
 export {
     EditProfil,
     DraftVideo,
@@ -56,5 +57,6 @@ export {
     DaftarNotifikasi, 
     Tersimpan, 
     Profil,
-    NavigationBar
+    NavigationBar,
+    Loginmenu
 };

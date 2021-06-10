@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft, TambahNotifikasi, DaftarDraft, DraftDokumen, DraftArtikel, DraftVideo, EditProfil} from '../pages';
+import { Splash, Login, Register, WelcomePage1, WelcomePage2, WelcomePage3, Home, DaftarNotifikasi, Tersimpan, Profil,  Kategori, KategoriArtikel, DaftarVideo, DaftarDokumen, DaftarArtikel, NavigationBar, PageVideo, PageDokumen, PageArtikel, TambahArtikel, TambahDokumen, TambahVideo, Screen, Draft, TambahNotifikasi, DaftarDraft, DraftDokumen, DraftArtikel, DraftVideo, EditProfil, Loginmenu} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { colors, icons } from '../utils';
 import { Icon } from 'react-native-elements';
@@ -30,6 +30,7 @@ const Router = () => {
             <Stack.Screen name="WelcomePage3" component={WelcomePage3} options={{headerShown:false}}/>
             <Stack.Screen name="KMS Sawit" component={NavigationBar}/>
             <Stack.Screen name="Login" component={Login} options={{headerShown:false}}/>
+            <Stack.Screen name="Loginmenu" component={Loginmenu} options={{headerShown:false}}/>
             <Stack.Screen name="Register" component={Register} options={{headerShown:false}}/>
             <Stack.Screen name="Beranda" component={Home} options={{headerShown:false}}/>
             <Stack.Screen name="Daftar Pengumuman" component={DaftarNotifikasi}/>
