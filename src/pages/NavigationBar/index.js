@@ -13,9 +13,14 @@ const NavigationBar=()=> {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: colors.gray2,
+        activeTintColor: colors.red,
         inactiveTintColor: icons.icon,
-        keyboardHidesTabBar:true
+        keyboardHidesTabBar:true,
+        labelStyle: {
+          fontSize: 15,
+          marginTop: 0,
+          paddingTop: 10,
+        },
       }}
       backBehavior='none'
     >
@@ -25,7 +30,7 @@ const NavigationBar=()=> {
         options={{
           tabBarLabel: 'Beranda',
           tabBarIcon: ({color}) => (
-            <Icon iconStyle={styles.icon} name="home" size={28} color={color}/>
+            <Icon iconStyle={styles.icon} name="home" size={33} color={color}/>
           ),
         }}
       />
@@ -35,7 +40,7 @@ const NavigationBar=()=> {
         options={{
           tabBarLabel: 'Tersimpan',
           tabBarIcon: ({color}) => (
-            <Icon iconStyle={styles.icon} name="bookmark" size={28} color={color}/>
+            <Icon iconStyle={styles.icon} name="bookmark" size={33} color={color}/>
           ),
         }}
       />
@@ -45,7 +50,7 @@ const NavigationBar=()=> {
         options={{
           tabBarLabel: 'Draft',
           tabBarIcon: ({color}) => (
-            <Icon iconStyle={styles.icon} name="description" size={28} color={color}/>
+            <Icon iconStyle={styles.icon} name="description" size={33} color={color}/>
           ),
         }}
       />
@@ -55,7 +60,7 @@ const NavigationBar=()=> {
         options={{
           tabBarLabel: 'Profil',
           tabBarIcon: ({color}) => (
-            <Icon iconStyle={styles.icon} name="person" size={28} color={color}/>
+            <Icon iconStyle={styles.icon} name="person" size={33} color={color}/>
           ),
         }}
       />
@@ -64,15 +69,9 @@ const NavigationBar=()=> {
 }
 const styles = {
   icon : {
-      marginTop: 2,
-      marginBottom: -5,
-  },
-  text : {
-      fontFamily: 'Nunito',
-      fontWeight: '600',
-      fontSize: 11,
-      textAlign: 'center',
-      color: icons.icon,
+      marginTop: 10,
+      marginBottom: 4,
+      paddingTop:3,
   },
 }
 export default NavigationBar;

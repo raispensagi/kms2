@@ -16,14 +16,14 @@ const Loginmenu = ({navigation}) => {
         <StatusBar barStyle="dark-content" backgroundColor='#f5f5f5' />
             <LoginTemplate/>
         </View>
-        <View style={styles.wrapper}>
-            <Text style={styles.textbutton}>Sudah memiliki akun?</Text>
-        </View>
-        <ActionButton title="Masuk" onPress={() => handleGoTo('Login')}/>
         <View style={styles.wrapper1}>
             <Text style={styles.textbutton}>Belum memiliki akun?</Text>
         </View>
         <ActionButton title="Daftar" onPress={() => handleGoTo('Register')}/>
+        <View style={styles.wrapper}>
+            <Text style={styles.textbutton}>Sudah memiliki akun?</Text>
+        </View>
+        <ActionButton title="Masuk" onPress={() => handleGoTo('Login')}/>
     </KeyboardAwareScrollView>
     );
 };

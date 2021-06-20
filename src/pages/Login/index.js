@@ -46,6 +46,8 @@ const Login = ({navigation}) => {
         })
     }
     };
+    
+    
     const handleGoTo = screen => {
         navigation.replace(screen);
     };
