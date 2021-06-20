@@ -22,7 +22,7 @@ const NavigationBar=()=> {
           paddingTop: 10,
         },
       }}
-      backBehavior='none'
+      backBehavior='initialRoute'
     >
       <Tab.Screen
         name="Home"
