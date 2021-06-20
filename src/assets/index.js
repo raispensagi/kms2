@@ -14,5 +14,10 @@ import Chart from './gambar/chart.png';
 import Red from './icon/red.png';
 import Orange from './icon/orange.png';
 import Green from './icon/green.png'
+import Tambahpengumuman from './icon/tambahpengumuman.png'
+import Tambahartikel from './icon/tambahartikel.png'
+import Tambahvideo from './icon/tambahvideo.png'
+import Tambahebook from './icon/tambahebook.png'
 
-export {Red, Orange, Green, Chart, Kelapa, Avatar, Bell, Welcomepage2,Welcomepage3, Logo, Ebook, PakarFemale, PakarMale, Petani, Artikel, Video};
+
+export {Red, Orange, Green, Chart, Kelapa, Avatar, Bell, Welcomepage2,Welcomepage3, Logo, Ebook, PakarFemale, PakarMale, Petani, Artikel, Video, Tambahpengumuman, Tambahartikel, Tambahvideo, Tambahebook};

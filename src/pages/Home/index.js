@@ -18,6 +18,7 @@ import {
   NavigasiBar,
   Notifikasi,
   KontenFeature,
+  KontenFeature2,
   BoxRiwayat,
 } from '../../component/molecules';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -128,6 +129,12 @@ const Home = ({navigation}) => {
               onPressVideo={() => navigation.navigate('Daftar Video')}
               onPressDokumen={() => navigation.navigate('Daftar E-Dokumen')}
             />
+            <KontenFeature2
+              onPressArtikel={() => navigation.navigate('Tambah Artikel')}
+              onPressVideo={() => navigation.navigate('Tambah Video')}
+              onPressDokumen={() => navigation.navigate('Tambah E-Dokumen')}
+              onPressPengumuman={() => navigation.navigate('Tambah Pengumuman')}
+            />
             <Text style={styles.riwayat}>Riwayat</Text>
           </>
         }
@@ -147,7 +154,7 @@ const Home = ({navigation}) => {
         )}
         keyExtractor={item => item.id.toString()}
       />
-      <ActionButton
+      {/* <ActionButton
         backgroundTappable={true}
         buttonColor={colors.red}
         spacing={7}
@@ -199,7 +206,7 @@ const Home = ({navigation}) => {
           useNativeFeedback={false}>
           <Icon name="dvr" color={colors.white1} size={40} />
         </ActionButton.Item>
-      </ActionButton>
+      </ActionButton> */}
     </View>
   );
 };

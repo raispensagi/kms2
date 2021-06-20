@@ -22,14 +22,14 @@ const Konten = ({title,img, onPress}) => {
 
 const styles = {
     wrapper : {
-        backgroundColor : colors.green4,
-        height: hp('12'),
+        backgroundColor : colors.white1,
+        height: hp('14'),
         width: wp('25'),
-        borderRadius: 15,
+        borderRadius: 10,
         shadowColor: 'black',
         shadowOffset: {
             width: 0,
-            height: 4,
+            height: 3,
         },
         shadowOpacity: 0.1,
         shadowRadius: 3,
@@ -42,7 +42,7 @@ const styles = {
         alignSelf: "center",
     },
     text : {
-        color:colortext.white, 
+        color:colortext.gray, 
         marginTop:-4,
         fontSize: 14, 
         fontFamily: 'Nunito', 
