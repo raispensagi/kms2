@@ -33,7 +33,7 @@ const styles = {
         flex: 1, 
         justifyContent: 'flex-start', 
         flexDirection: "row",
-        marginLeft :15,
+        marginLeft :16,
         marginBottom: 15,
     },
     text:{
