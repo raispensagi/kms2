@@ -39,10 +39,19 @@ const TambahDokumen = ({navigation}) => {
         if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
+        if (form.halaman==='') {
+            Alert.alert("Halaman tidak boleh kosong")
+        }
+        if (form.bahasa==='') {
+            Alert.alert("Bahasa tidak boleh kosong")
+        }
         if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.file!=='') {
+        if (form.deskripsi==='') {
+            Alert.alert("Deskripsi tidak boleh kosong")
+        }
+        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/edokumen/draft `,
         {
             method:"POST",
