@@ -8,17 +8,6 @@ import { colors, colortext } from '../../utils';
 import { FlatList } from 'react-native-gesture-handler';
 const DraftDokumen = ({route, navigation}) => {
     const {id} = route.params;
-    const [form, setForm] = useState({
-        judul: '',
-        penulis:'',
-        tahun:'',
-        penerbit:'',
-        halaman:'',
-        bahasa:'',
-        deskripsi:'',
-        file:'',
-        kategori:'',
-    });
     const [loading,setLoading]= useState(true)
     const postdraft = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
@@ -35,10 +24,19 @@ const DraftDokumen = ({route, navigation}) => {
         if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
+        if (form.halaman==='') {
+            Alert.alert("Halaman tidak boleh kosong")
+        }
+        if (form.bahasa==='') {
+            Alert.alert("Bahasa tidak boleh kosong")
+        }
         if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.file!=='') {
+        if (form.deskripsi==='') {
+            Alert.alert("Deskripsi tidak boleh kosong")
+        }
+        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
         {
             method:"POST",
@@ -47,11 +45,12 @@ const DraftDokumen = ({route, navigation}) => {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             }),
-            body: JSON.stringify(formsend)
+            body: JSON.stringify(form)
         })
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            Alert.alert('Konten telah dibagikan')
             navigation.goBack(screen)
         }
         )
@@ -75,10 +74,19 @@ const DraftDokumen = ({route, navigation}) => {
         if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
+        if (form.halaman==='') {
+            Alert.alert("Halaman tidak boleh kosong")
+        }
+        if (form.bahasa==='') {
+            Alert.alert("Bahasa tidak boleh kosong")
+        }
         if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.file!=='') {
+        if (form.deskripsi==='') {
+            Alert.alert("Deskripsi tidak boleh kosong")
+        }
+        if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
         {
             method:"POST",
@@ -87,12 +95,12 @@ const DraftDokumen = ({route, navigation}) => {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             }),
-            body: JSON.stringify(formsend)
+            body: JSON.stringify(form)
         })
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            console.log(formsend)
+            Alert.alert('Konten berhasil disimpan')
             navigation.goBack(screen)
         }
         )
@@ -111,7 +119,7 @@ const DraftDokumen = ({route, navigation}) => {
     const [deskripsi, setDeskripsi]=useState()
     const [file, setFile]=useState()
     const onInputChange = (value, input) => {
-        setFormSend({
+        setForm({
             'judul':judul,
             'penulis':penulis,
             'tahun':tahun,
@@ -126,7 +134,7 @@ const DraftDokumen = ({route, navigation}) => {
     }
     const onInputChangeKategori = (value, input) => {
         setSelectedValue(value)
-        setFormSend({
+        setForm({
             'judul':judul,
             'penulis':penulis,
             'tahun':tahun,
@@ -138,7 +146,7 @@ const DraftDokumen = ({route, navigation}) => {
             [input]: value,
         })
     }
-    const [formsend, setFormSend]= useState({})
+    const [form, setForm]= useState({})
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
@@ -152,7 +160,7 @@ const DraftDokumen = ({route, navigation}) => {
             .then((response) => response.json())
             .then((responseJson) => {
                 setLoading(false),
-                console.log(responseJson.konten.map(value=> value.kategori))
+                console.log(responseJson)
                 setForm(responseJson.konten),
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setBahasa(responseJson.konten.map(value => value.konten.map(val=> val.bahasa)).toString()),
@@ -184,13 +192,13 @@ const DraftDokumen = ({route, navigation}) => {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
                 <ShortInput value={judul} placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
-                <ShortInput value={penulis} placeholder='Penulis' onChangeText={value=>onInputChange(value, 'peulis')}/>
+                <ShortInput value={penulis} placeholder='Penulis' onChangeText={value=>onInputChange(value, 'penulis')}/>
                 <ShortInput value={tahun} placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
                 <ShortInput value={penerbit} placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
                 <ShortInput value={halaman} placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
                 <ShortInput value={bahasa} placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
                 <ShortInput value={file} placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
-                <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
+                {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                             <Picker
                                 itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                                 selectedValue={selectedValue}
@@ -207,7 +215,7 @@ const DraftDokumen = ({route, navigation}) => {
                                 <Picker.Item  label="Panen" value="Panen" />
                                 <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                             </Picker>
-                        </CardView>
+                        </CardView> */}
                         <LongInput placeholder='Deskripsi' value={deskripsi} onChangeText={value=>onInputChange(value, 'deskripsi')}/>
                 <AddButton  title1='Simpan' title2='Bagikan' 
                         onPress1={()=> editdraft('KMS Sawit')}

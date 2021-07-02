@@ -69,7 +69,7 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
-            Alert.alert('Konten berhasil disimpan')
+            Alert.alert('Konten telah diperbaharui')
             navigation.goBack(screen)
         }
         )
