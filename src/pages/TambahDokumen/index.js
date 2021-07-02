@@ -136,7 +136,7 @@ const TambahDokumen = ({navigation}) => {
             <ShortInput  placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
             <ShortInput  placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
             <ShortInput  placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
-            <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
+            {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
@@ -153,7 +153,7 @@ const TambahDokumen = ({navigation}) => {
                     <Picker.Item  label="Panen" value="Panen" />
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
-            </CardView>
+            </CardView> */}
             <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('Daftar Draft')}

@@ -34,6 +34,7 @@ const DraftArtikel = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            Alert.alert('Konten telah dibagikan')
             navigation.goBack(screen)
         }
         )
@@ -69,6 +70,7 @@ const DraftArtikel = ({route, navigation}) => {
         .then((responseJson) => {
             console.log(responseJson)
             console.log(formsend)
+            Alert.alert('Konten berhasil disimpan')
             navigation.goBack(screen)
         }
         )

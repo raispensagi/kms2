@@ -14,16 +14,13 @@ const DraftVideo = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.isi==='') {
-            Alert.alert("Isi tidak boleh kosong")
-        }
-        if (formsend.kategori==='') {
-            Alert.alert("Kategori tidak boleh kosong")
-        }
         if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='' && formsend.video_audio!=='') {
+        if (formsend.isi==='') {
+            Alert.alert("Sumber channel youtube tidak boleh kosong")
+        }
+        if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
         {
             method:"POST",
@@ -37,6 +34,7 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            Alert.alert('Konten telah dibagikan')
             navigation.goBack(screen)
         }
         )
@@ -51,16 +49,13 @@ const DraftVideo = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.isi==='') {
-            Alert.alert("Isi tidak boleh kosong")
-        }
-        if (formsend.kategori==='') {
-            Alert.alert("Kategori tidak boleh kosong")
-        }
         if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='' && formsend.video_audio!=='') {
+        if (formsend.isi==='') {
+            Alert.alert("Sumber channel youtube tidak boleh kosong")
+        }
+        if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
         {
             method:"POST",
@@ -74,6 +69,7 @@ const DraftVideo = ({route, navigation}) => {
         .then((response) => response.json())
         .then((responseJson) => {
             console.log(responseJson)
+            Alert.alert('Konten berhasil disimpan')
             navigation.goBack(screen)
         }
         )
@@ -146,7 +142,7 @@ const DraftVideo = ({route, navigation}) => {
                  <ShortInput value={judul} placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
                  <ShortInput value={video_audio} placeholder='ID link video*' onChangeText={value=>onInputChange(value, 'video_audio')}/>
                 <Text style={{fontSize:11, marginHorizontal:20}}> * Masukkan hanya link ID video youtube. Contoh: link https://youtu.be/0GfRJZ6eu-Y , ID video : 0GfRJZ6eu-Y  </Text>
-            <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
+            {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
@@ -163,7 +159,7 @@ const DraftVideo = ({route, navigation}) => {
                     <Picker.Item  label="Panen" value="Panen" />
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
-            </CardView>
+            </CardView> */}
             <ShortInput value={isi}  placeholder='Sumber channel youtube' onChangeText={value=>onInputChange(value, 'isi')}/>
                 <AddButton  title1='Simpan' title2='Bagikan' 
                         onPress1={()=> editdraft('KMS Sawit')}

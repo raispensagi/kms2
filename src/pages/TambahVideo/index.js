@@ -99,7 +99,7 @@ const TambahVideo = ({navigation}) => {
             <ShortInput placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
             <ShortInput placeholder='ID link video*' onChangeText={value=>onInputChange(value, 'video_audio')}/>
             <Text style={{fontSize:11, marginHorizontal:20}}> * Masukkan hanya link ID video youtube. Contoh: link https://youtu.be/0GfRJZ6eu-Y , ID video : 0GfRJZ6eu-Y  </Text>
-            <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
+            {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
@@ -116,7 +116,7 @@ const TambahVideo = ({navigation}) => {
                     <Picker.Item  label="Panen" value="Panen" />
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
-            </CardView>
+            </CardView> */}
             <ShortInput  placeholder='Sumber channel youtube' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
