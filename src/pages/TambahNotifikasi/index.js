@@ -26,7 +26,7 @@ const TambahNotifikasi = ({navigation}) => {
         if (form.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (form.judul!=='' && form.isi!=='' && form.kategori!=='') {
+        if (form.headline!=='' && form.isi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/add`,
         {
             method:"POST",

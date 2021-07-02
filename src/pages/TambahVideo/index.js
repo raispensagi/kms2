@@ -26,16 +26,13 @@ const TambahVideo = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
-            Alert.alert("Isi tidak boleh kosong")
-        }
-        if (form.kategori==='') {
-            Alert.alert("Kategori tidak boleh kosong")
-        }
         if (form.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (form.judul!=='' && form.isi!=='' && form.kategori!=='' && form.video_audio!=='') {
+        if (form.isi==='') {
+            Alert.alert("Sumber channel youtube tidak boleh kosong")
+        }
+        if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/video/draft `,
         {
             method:"POST",
@@ -65,16 +62,13 @@ const TambahVideo = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
-            Alert.alert("Isi tidak boleh kosong")
-        }
-        if (form.kategori==='') {
-            Alert.alert("Kategori tidak boleh kosong")
-        }
         if (form.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (form.judul!=='' && form.isi!=='' && form.kategori!=='' && form.video_audio!=='') {
+        if (form.isi==='') {
+            Alert.alert("Sumber channel youtube tidak boleh kosong")
+        }
+        if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/video/post`,
         {
             method:"POST",
