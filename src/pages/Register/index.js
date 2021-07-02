@@ -21,10 +21,10 @@ const Register = ({navigation}) => {
         if (form.nama==='') {
             Alert.alert("Nama tidak boleh kosong")
         }
-        if (form.email==='') {
+        else if (form.email==='') {
             Alert.alert("Email tidak boleh kosong")
         }
-        if (form.password==='') {
+        else if (form.password==='') {
             Alert.alert("Password tidak boleh kosong")
         }
         if (form.password!=='' && form.email!=='') {
@@ -45,7 +45,7 @@ const Register = ({navigation}) => {
                 console.log(data)
                 navigation.replace(screen)
             } catch (err) {
-                Alert.alert('Masukan email dengan benar dan tulisan tidak boleh terpisah', 'Contoh1 : nama@gmail.com      Contoh2 : ajidarmawan@gmail.com')
+                Alert.alert('Masukan email dengan benar dan tulisan email tidak boleh terpisah', 'Contoh1 : nama@gmail.com      Contoh2 : ajidarmawan@gmail.com')
             }
         })
     }

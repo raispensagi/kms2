@@ -21,7 +21,7 @@ const Login = ({navigation}) => {
         if (form.email==='') {
             Alert.alert("Email tidak boleh kosong")
         }
-        if (form.password==='') {
+        else if (form.password==='') {
             Alert.alert("Password tidak boleh kosong")
         }
         if (form.password!=='' && form.email!=='') {

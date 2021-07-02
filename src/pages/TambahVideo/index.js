@@ -26,10 +26,10 @@ const TambahVideo = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.video_audio==='') {
+        else if (form.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (form.isi==='') {
+        else if (form.isi==='') {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {
@@ -61,11 +61,11 @@ const TambahVideo = ({navigation}) => {
         const userToken = JSON.parse(token) 
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
-        }
-        if (form.video_audio==='') {
+        } 
+        else if (form.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
-        }
-        if (form.isi==='') {
+        } 
+        else if (form.isi==='') {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {

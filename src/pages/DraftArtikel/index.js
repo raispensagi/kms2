@@ -14,10 +14,10 @@ const DraftArtikel = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.isi==='') {
+        else if (formsend.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (formsend.kategori==='') {
+        else if (formsend.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='') {
@@ -49,10 +49,10 @@ const DraftArtikel = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.isi==='') {
+        else if (formsend.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (formsend.kategori==='') {
+        else if (formsend.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='') {
@@ -68,8 +68,9 @@ const DraftArtikel = ({route, navigation}) => {
         })
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log(responseJson)
+            console.log("TULISAN")
             console.log(formsend)
+            console.log(responseJson)
             Alert.alert('Konten telah diperbaharui')
             navigation.goBack(screen)
         }
@@ -83,14 +84,38 @@ const DraftArtikel = ({route, navigation}) => {
     const [judul, setJudul]=useState()
     const [isi, setIsi]=useState()
     const onInputChange = (value, input) => {
-        setFormSend({
-            'judul': judul,
-            'kategori':selectedValue,
-            'isi':isi,
-            [input]: value,
-            kategori:selectedValue,
-        })
-        
+        if (input === "judul") {
+            setJudul(value)
+            setFormSend({
+                'judul': value,
+                'kategori':selectedValue,
+                'isi':isi,
+            })
+        }
+        else if (input === "kategori") {
+            setSelectedValue(value)
+            setFormSend({
+                'judul': judul,
+                'kategori':value,
+                'isi':isi,
+            })
+        }
+        else if (input === "isi") {
+            setIsi(value)
+            setFormSend({
+                'judul': judul,
+                'kategori':selectedValue,
+                'isi':value,
+            })
+        }
+        // setFormSend({
+        //     'judul': judul,
+        //     'kategori':selectedValue,
+        //     "video_audio":video_audio,
+        //     'isi':isi,
+        //     [input]: value,
+        //     kategori:selectedValue,
+        // })
     }
     const onInputChangeKategori = (value, input) => {
         setSelectedValue(value)
@@ -116,6 +141,7 @@ const DraftArtikel = ({route, navigation}) => {
             .then((response) => response.json())
             .then((responseJson) => {
                 setLoading(false),
+                console.log("===>"+JSON.stringify(responseJson)),
                 console.log(responseJson.konten.map(value=> value.kategori))
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setIsi(responseJson.konten.map(value => value.konten.map(val=> val.isi)).toString()),
@@ -146,7 +172,7 @@ const DraftArtikel = ({route, navigation}) => {
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
                     style={{ width: 320, opacity:0.6,  marginTop:-3}}
-                    onValueChange={(itemValue, itemIndex) => onInputChangeKategori(itemValue, 'kategori')}
+                    onValueChange={(itemValue, itemIndex) => onInputChange(itemValue, 'kategori')}
                     mode='dropdown'
                 >
                     <Picker.Item label="Pendahuluan terkait Kelapa Sawit" value="Pendahuluan terkait Kelapa Sawit" />

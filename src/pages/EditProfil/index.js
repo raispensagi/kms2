@@ -4,18 +4,35 @@ import { ShortInput, RedButton } from '../../component/atoms';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const EditProfil = ({navigation}) => {
-    const [form, setForm] = useState({
-    });
-    const onInputChange = (value, input) => {
-        setForm({
-            ...form,
-            'nama':nama,
-            'email':email,
-            [input]: value,
-        })
-    }
     const [email, setEmail]= useState()
     const [nama, setNama]= useState()
+    const [form, setForm] = useState({
+    });
+    // const onInputChange = (value, input) => {
+    //     setForm({
+    //         ...form,
+    //         'nama':nama,
+    //         'email':email,
+    //         [input]: value,
+    //     })
+        
+    // }
+    const onInputChange = (value, input) => {
+        if (input === "nama") {
+            setNama(value)
+            setForm({
+                'nama': value,
+                'email':email,
+            })
+        }
+        else if (input === "email") {
+            setEmail(value)
+            setForm({
+                'nama': nama,
+                'email':value,
+            })
+        }
+    }
     const [loading, setLoading]=useState();
     const profil = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
@@ -48,13 +65,13 @@ const EditProfil = ({navigation}) => {
         if (form.nama==='') {
             Alert.alert("Nama tidak boleh kosong")
         }
-        if (form.email==='') {
+        else if (form.email==='') {
             Alert.alert("Email tidak boleh kosong")
         }
-        if (form.password==='') {
-            Alert.alert("Password tidak boleh kosong")
-        }
-        if (form.password!=='' && form.email!=='') {
+        // if (form.password==='') {
+        //     Alert.alert("Password tidak boleh kosong")
+        // }
+        if (form.nama!=='' && form.email!=='') {
         fetch(`http://117.53.47.76/kms_backend/public/api/profil/update`,
         {
             method:"POST",

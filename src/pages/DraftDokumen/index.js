@@ -15,25 +15,25 @@ const DraftDokumen = ({route, navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.penulis==='') {
+        else if (form.penulis==='') {
             Alert.alert("Penulis tidak boleh kosong")
         }
-        if (form.tahun==='') {
+        else if (form.tahun==='') {
             Alert.alert("Tahun tidak boleh kosong")
         }
-        if (form.penerbit==='') {
+        else if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
-        if (form.halaman==='') {
+        else if (form.halaman==='') {
             Alert.alert("Halaman tidak boleh kosong")
         }
-        if (form.bahasa==='') {
+        else if (form.bahasa==='') {
             Alert.alert("Bahasa tidak boleh kosong")
         }
-        if (form.file==='') {
+        else if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.deskripsi==='') {
+        else if (form.deskripsi==='') {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
@@ -49,6 +49,8 @@ const DraftDokumen = ({route, navigation}) => {
         })
         .then((response) => response.json())
         .then((responseJson) => {
+            console.log("TULISAN")
+            console.log(form)
             console.log(responseJson)
             Alert.alert('Konten telah dibagikan')
             navigation.goBack(screen)
@@ -65,25 +67,25 @@ const DraftDokumen = ({route, navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.penulis==='') {
+        else if (form.penulis==='') {
             Alert.alert("Penulis tidak boleh kosong")
         }
-        if (form.tahun==='') {
+        else if (form.tahun==='') {
             Alert.alert("Tahun tidak boleh kosong")
         }
-        if (form.penerbit==='') {
+        else if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
-        if (form.halaman==='') {
+        else if (form.halaman==='') {
             Alert.alert("Halaman tidak boleh kosong")
         }
-        if (form.bahasa==='') {
+        else if (form.bahasa==='') {
             Alert.alert("Bahasa tidak boleh kosong")
         }
-        if (form.file==='') {
+        else if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.deskripsi==='') {
+        else if (form.deskripsi==='') {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
@@ -99,6 +101,8 @@ const DraftDokumen = ({route, navigation}) => {
         })
         .then((response) => response.json())
         .then((responseJson) => {
+            console.log("TULISAN")
+            console.log(form)
             console.log(responseJson)
             Alert.alert('Konten telah diperbaharui')
             navigation.goBack(screen)
@@ -119,33 +123,125 @@ const DraftDokumen = ({route, navigation}) => {
     const [deskripsi, setDeskripsi]=useState()
     const [file, setFile]=useState()
     const onInputChange = (value, input) => {
-        setForm({
-            'judul':judul,
-            'penulis':penulis,
-            'tahun':tahun,
-            'penerbit':penerbit,
-            'halaman':halaman,
-            'bahasa':bahasa,
-            'deskripsi':deskripsi,
-            'file':file,
-            [input]: value,
-            kategori:selectedValue,
-        })
+        if (input === "judul") {
+            setJudul(value)
+            setForm({
+                'judul':value,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "penulis") {
+            setPenulis(value)
+            setForm({
+                'judul':judul,
+                'penulis':value,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "tahun") {
+            setTahun(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':value,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "penerbit") {
+            setPenerbit(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':value,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "halaman") {
+            setHalaman(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':value,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "bahasa") {
+            setBahasa(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':value,
+                'deskripsi':deskripsi,
+                'file':file,
+            })
+        }
+        else if (input === "deskripsi") {
+            setDeskripsi(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':value,
+                'file':file,
+            })
+        }
+        else if (input === "file") {
+            setFile(value)
+            setForm({
+                'judul':judul,
+                'penulis':penulis,
+                'tahun':tahun,
+                'penerbit':penerbit,
+                'halaman':halaman,
+                'bahasa':bahasa,
+                'deskripsi':deskripsi,
+                'file':value,
+            })
+        }
     }
-    const onInputChangeKategori = (value, input) => {
-        setSelectedValue(value)
-        setForm({
-            'judul':judul,
-            'penulis':penulis,
-            'tahun':tahun,
-            'penerbit':penerbit,
-            'halaman':halaman,
-            'bahasa':bahasa,
-            'deskripsi':deskripsi,
-            'file':file,
-            [input]: value,
-        })
-    }
+    // const onInputChangeKategori = (value, input) => {
+    //     setSelectedValue(value)
+    //     setForm({
+    //         'judul':judul,
+    //         'penulis':penulis,
+    //         'tahun':tahun,
+    //         'penerbit':penerbit,
+    //         'halaman':halaman,
+    //         'bahasa':bahasa,
+    //         'deskripsi':deskripsi,
+    //         'file':file,
+    //         [input]: value,
+    //     })
+    // }
     const [form, setForm]= useState({})
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
@@ -160,7 +256,7 @@ const DraftDokumen = ({route, navigation}) => {
             .then((response) => response.json())
             .then((responseJson) => {
                 setLoading(false),
-                console.log(responseJson)
+                console.log("===>"+JSON.stringify(responseJson)),
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setBahasa(responseJson.konten.map(value => value.konten.map(val=> val.bahasa)).toString()),
                 setDeskripsi(responseJson.konten.map(value => value.konten.map(val=> val.deskripsi)).toString()),

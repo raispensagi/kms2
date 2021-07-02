@@ -23,7 +23,7 @@ const TambahNotifikasi = ({navigation}) => {
         if (form.headline==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
+        else if (form.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
         if (form.headline!=='' && form.isi!=='') {

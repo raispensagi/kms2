@@ -30,25 +30,25 @@ const TambahDokumen = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.penulis==='') {
+        else if (form.penulis==='') {
             Alert.alert("Penulis tidak boleh kosong")
         }
-        if (form.tahun==='') {
+        else if (form.tahun==='') {
             Alert.alert("Tahun tidak boleh kosong")
         }
-        if (form.penerbit==='') {
+        else if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
-        if (form.halaman==='') {
+        else if (form.halaman==='') {
             Alert.alert("Halaman tidak boleh kosong")
         }
-        if (form.bahasa==='') {
+        else if (form.bahasa==='') {
             Alert.alert("Bahasa tidak boleh kosong")
         }
-        if (form.file==='') {
+        else if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.deskripsi==='') {
+        else if (form.deskripsi==='') {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
@@ -81,25 +81,25 @@ const TambahDokumen = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.penulis==='') {
+        else if (form.penulis==='') {
             Alert.alert("Penulis tidak boleh kosong")
         }
-        if (form.tahun==='') {
+        else if (form.tahun==='') {
             Alert.alert("Tahun tidak boleh kosong")
         }
-        if (form.penerbit==='') {
+        else if (form.penerbit==='') {
             Alert.alert("Penerbit tidak boleh kosong")
         }
-        if (form.halaman==='') {
+        else if (form.halaman==='') {
             Alert.alert("Halaman tidak boleh kosong")
         }
-        if (form.bahasa==='') {
+        else if (form.bahasa==='') {
             Alert.alert("Bahasa tidak boleh kosong")
         }
-        if (form.file==='') {
+        else if (form.file==='') {
             Alert.alert("Link unduh tidak boleh kosong")
         }
-        if (form.deskripsi==='') {
+        else if (form.deskripsi==='') {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {

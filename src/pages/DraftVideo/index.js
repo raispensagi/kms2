@@ -14,10 +14,10 @@ const DraftVideo = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.video_audio==='') {
+        else if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (formsend.isi==='') {
+       else if (formsend.isi==='') {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
@@ -49,14 +49,14 @@ const DraftVideo = ({route, navigation}) => {
         if (formsend.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (formsend.video_audio==='') {
+        else if (formsend.video_audio==='') {
             Alert.alert("Link video youtube tidak boleh kosong")
         }
-        if (formsend.isi==='') {
+        else if (formsend.isi==='') {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
+            fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -68,6 +68,8 @@ const DraftVideo = ({route, navigation}) => {
         })
         .then((response) => response.json())
         .then((responseJson) => {
+            console.log("TULISAN")
+            console.log(formsend)
             console.log(responseJson)
             Alert.alert('Konten telah diperbaharui')
             navigation.goBack(screen)
@@ -83,24 +85,51 @@ const DraftVideo = ({route, navigation}) => {
     const [isi, setIsi]=useState()
     const [video_audio, setVideo]=useState()
     const onInputChange = (value, input) => {
-        setFormSend({
-            'judul': judul,
-            'kategori':selectedValue,
-            "video_audio":video_audio,
-            'isi':isi,
-            [input]: value,
-            kategori:selectedValue,
-        })
+        if (input === "judul") {
+            setJudul(value)
+            setFormSend({
+                'judul': value,
+                'kategori':selectedValue,
+                "video_audio":video_audio,
+                'isi':isi,
+            })
+        }
+        else if (input === "video_audio") {
+            setVideo(value)
+            setFormSend({
+                'judul': judul,
+                'kategori':selectedValue,
+                "video_audio":value,
+                'isi':isi,
+            })
+        }
+        else if (input === "isi") {
+            setIsi(value)
+            setFormSend({
+                'judul': judul,
+                'kategori':selectedValue,
+                "video_audio":video_audio,
+                'isi':value,
+            })
+        }
+        // setFormSend({
+        //     'judul': judul,
+        //     'kategori':selectedValue,
+        //     "video_audio":video_audio,
+        //     'isi':isi,
+        //     [input]: value,
+        //     kategori:selectedValue,
+        // })
     }
-    const onInputChangekategori = (value, input) => {
-        setSelectedValue(value)
-        setFormSend({
-            'judul': judul,
-            "video_audio":video_audio,
-            'isi':isi,
-            [input]: value,
-        })
-    }
+    // const onInputChangekategori = (value, input) => {
+    //     setSelectedValue(value)
+    //     setFormSend({
+    //         'judul': judul,
+    //         "video_audio":video_audio,
+    //         'isi':isi,
+    //         [input]: value,
+    //     })
+    // }
     const [formsend, setFormSend]= useState({})
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
@@ -115,6 +144,7 @@ const DraftVideo = ({route, navigation}) => {
             .then((response) => response.json())
             .then((responseJson) => {
                 setLoading(false),
+                console.log("===>"+JSON.stringify(responseJson)),
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setIsi(responseJson.konten.map(value => value.konten.map(val=> val.isi)).toString()),
                 setVideo(responseJson.konten.map(value => value.konten.map(val=> val.video_audio)).toString()),

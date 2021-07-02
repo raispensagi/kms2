@@ -26,10 +26,10 @@ const TambahArtikel = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
+        else if (form.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (form.kategori==='') {
+        else if (form.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
         if (form.judul!=='' && form.isi!=='' && form.kategori!=='') {
@@ -62,10 +62,10 @@ const TambahArtikel = ({navigation}) => {
         if (form.judul==='') {
             Alert.alert("Judul tidak boleh kosong")
         }
-        if (form.isi==='') {
+        else if (form.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
         }
-        if (form.kategori==='') {
+        else if (form.kategori==='') {
             Alert.alert("Kategori tidak boleh kosong")
         }
         if (form.judul!=='' && form.isi!=='' && form.kategori!=='') {
