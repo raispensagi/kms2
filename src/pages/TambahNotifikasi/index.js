@@ -21,7 +21,7 @@ const TambahNotifikasi = ({navigation}) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token) 
         if (form.headline==='') {
-            Alert.alert("Headline tidak boleh kosong")
+            Alert.alert("Judul tidak boleh kosong")
         }
         if (form.isi==='') {
             Alert.alert("Isi tidak boleh kosong")
@@ -51,7 +51,7 @@ const TambahNotifikasi = ({navigation}) => {
     };
     return(
         <View>
-            <ShortInput placeholder='Headline pengumuman' onChangeText={value=>onInputChange(value, 'headline')}/>
+            <ShortInput placeholder='Judul pengumuman' onChangeText={value=>onInputChange(value, 'headline')}/>
             <LongInput placeholder='Isi pengumuman' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View style={{marginRight:15, marginTop:10}}>
                 <RedButton title='Bagikan' onPress={()=> simpan('KMS Sawit')} />
