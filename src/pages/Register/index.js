@@ -45,7 +45,7 @@ const Register = ({navigation}) => {
                 console.log(data)
                 navigation.replace(screen)
             } catch (err) {
-                Alert.alert("Masukan email dengan benar. Contoh : nama@gmail.com")
+                Alert.alert('Masukan email dengan benar dan tulisan tidak boleh terpisah', 'Contoh1 : nama@gmail.com atau Contoh2 : ajidarmawan@gmail.com')
             }
         })
     }
