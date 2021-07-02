@@ -21,6 +21,16 @@ const DraftArtikel = ({route, navigation}) => {
             Alert.alert("Kategori tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.kategori!=='') {
+        fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
+            {
+                method:"POST",
+                headers: new Headers ( {
+                    Authorization : 'Bearer ' + userToken,
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify(formsend)
+            })
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
         {
             method:"POST",

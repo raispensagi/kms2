@@ -37,6 +37,16 @@ const DraftDokumen = ({route, navigation}) => {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
+        fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
+            {
+                method:"POST",
+                headers: new Headers ( {
+                    Authorization : 'Bearer ' + userToken,
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify(form)
+        })
         fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
         {
             method:"POST",
