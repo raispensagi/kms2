@@ -70,7 +70,7 @@ const DraftArtikel = ({route, navigation}) => {
         .then((responseJson) => {
             console.log(responseJson)
             console.log(formsend)
-            Alert.alert('Konten berhasil disimpanKonten telah diperbaharui')
+            Alert.alert('Konten telah diperbaharui')
             navigation.goBack(screen)
         }
         )
