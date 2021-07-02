@@ -161,7 +161,6 @@ const DraftDokumen = ({route, navigation}) => {
             .then((responseJson) => {
                 setLoading(false),
                 console.log(responseJson)
-                setForm(responseJson.konten),
                 setJudul(responseJson.konten.map(value=> value.judul).toString()),
                 setBahasa(responseJson.konten.map(value => value.konten.map(val=> val.bahasa)).toString()),
                 setDeskripsi(responseJson.konten.map(value => value.konten.map(val=> val.deskripsi)).toString()),
