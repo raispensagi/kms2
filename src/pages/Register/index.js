@@ -42,10 +42,14 @@ const Register = ({navigation}) => {
             try {
                 const value = JSON.stringify(data.access_token)
                 await AsyncStorage.setItem('userToken', value)
-                console.log(data)
+                // console.log(data)
                 navigation.replace(screen)
             } catch (err) {
-                Alert.alert('Masukan email dengan benar dan tulisan email tidak boleh terpisah', 'Contoh1 : nama@gmail.com      Contoh2 : ajidarmawan@gmail.com')
+                console.log(data)
+                if(data.Status === 400) {
+                    Alert.alert('Masukan email dengan benar dan tulisan email tidak boleh terpisah', 'Contoh1 : nama@gmail.com      Contoh2 : ajidarmawan@gmail.com')}
+                else if(data.Status === 409) {
+                    Alert.alert('Email telah terdaftar', 'Cobalah gunakan email yang lain')}
             }
         })
     }
