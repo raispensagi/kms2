@@ -30,20 +30,20 @@ const BoxNotifikasi = ({name, isi, onPress, id}) => {
             console.error(error);
         });
   }
-    Alert.alert(
-          "Hapus pengumuman?",
-          " ",
-        [
-          { text: "Batal", onPress: () => console.log("Batal Hapus Pengumuman") },
-          { text: "Hapus", onPress: () => remove(), },
-        ],
-        { cancelable: true },
-          )
+    // Alert.alert(
+    //       "Hapus pengumuman?",
+    //       " ",
+    //     [
+    //       { text: "Batal", onPress: () => console.log("Batal Hapus Pengumuman") },
+    //       { text: "Hapus", onPress: () => remove(), },
+    //     ],
+    //     { cancelable: true },
+    //       )
         };
     return (
         <TouchableOpacity onLongPress={
             handlerLongClick
-          } style={styles.wrapper} activeOpacity={0.6}
+          } style={styles.wrapper} activeOpacity={0.7}
           onPress={onPress}>
             <ImageCircle img={PakarMale} />
             <View style={{flexDirection:'column'}}>

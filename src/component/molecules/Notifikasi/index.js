@@ -91,6 +91,7 @@ const Notifikasi = props => {
     );
   } else {
     return (
+      <TouchableOpacity onPress={props.onPress} activeOpacity={0.7}>
       <SafeAreaView style={styles.wrapper}>
         <View style={{flexDirection: 'row', marginTop: 3}}>
           <View style={{marginTop: 3}}>
@@ -128,6 +129,7 @@ const Notifikasi = props => {
           </View>
         </View>
       </SafeAreaView>
+      </TouchableOpacity>
     );
   }
 };

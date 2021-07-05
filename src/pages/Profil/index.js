@@ -2,24 +2,48 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, ActivityIndicator, SafeAreaView, FlatList } from 'react-native';
 import { ProfilBeranda, ActionButton, BoxKontenRiwayat, AddButton } from '../../component/atoms';
 import AsyncStorage from '@react-native-community/async-storage';
-import { RefreshControl } from 'react-native';
+import { RefreshControl,Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { colors, colortext } from '../../utils';
 
 const Profil = ({navigation}) => {
     const handleGoTo = async (screen) => {
         const data = await AsyncStorage.removeItem('userToken')
-        fetch(`http://117.53.47.76/kms_backend/public/api/logout`,
-        {
-            method:"POST",
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(() => {
-            navigation.replace(screen)
-        })
+        Alert.alert(
+            "Peringatan","Anda yakin ingin keluar pada akun yang sedang digunakan?",
+            [
+              {
+                text: "Batal",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+              },
+              { text: "Iya", onPress: () => {
+                    fetch(`http://117.53.47.76/kms_backend/public/api/logout`,
+                    {
+                        method:"POST",
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                    })
+                    .then(() => {
+                        navigation.replace(screen)
+                    })
+                     } 
+                }
+            ]
+          );
+        // fetch(`http://117.53.47.76/kms_backend/public/api/logout`,
+        // {
+        //     method:"POST",
+        //     headers: {
+        //         Accept: 'application/json',
+        //         'Content-Type': 'application/json'
+        //     },
+        // })
+        // .then(() => {
+        //     navigation.replace(screen)
+        // })
         
     };
     const [email, setEmail]= useState()
