@@ -30,15 +30,15 @@ const BoxNotifikasi = ({name, isi, onPress, id}) => {
             console.error(error);
         });
   }
-    // Alert.alert(
-    //       "Hapus pengumuman?",
-    //       " ",
-    //     [
-    //       { text: "Batal", onPress: () => console.log("Batal Hapus Pengumuman") },
-    //       { text: "Hapus", onPress: () => remove(), },
-    //     ],
-    //     { cancelable: true },
-    //       )
+    Alert.alert(
+          "Hapus pengumuman?",
+          " ",
+        [
+          { text: "Batal", onPress: () => console.log("Batal Hapus Pengumuman") },
+          { text: "Hapus", onPress: () => remove(), },
+        ],
+        { cancelable: true },
+          )
         };
     return (
         <TouchableOpacity onLongPress={
