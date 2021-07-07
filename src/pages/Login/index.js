@@ -41,7 +41,7 @@ const Login = ({navigation}) => {
                 await AsyncStorage.setItem('userToken', value)
                 navigation.replace(screen)
             } catch (err) {
-                Alert.alert("Email atau Password salah", "Harap dipastikan email dan paassword yang anda masukan benar.")
+                Alert.alert("Email atau Password salah", "Harap pastikan email dan password yang anda masukan benar.")
             }
         })
     }
