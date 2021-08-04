@@ -101,7 +101,7 @@ const TambahArtikel = ({navigation}) => {
                 <Picker
                     itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
                     selectedValue={selectedValue}
-                    style={{ width: 320, opacity:0.6,  marginTop:-3}}
+                    style={{ width: 320, opacity:0.6,  marginTop:-3,marginLeft:7}}
                     onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                     mode='dropdown'
                 >

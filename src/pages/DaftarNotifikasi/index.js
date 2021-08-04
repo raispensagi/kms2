@@ -39,13 +39,11 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-        getNotifikasi();
-
-      console.log('kepanggil dari sini');
+      getNotifikasi();
+      // console.log('kepanggil dari sini');
     });
-
     return unsubscribe;
-  }, [navigation]);
+  }, [navigation, notifikasi]);
 
   return (
     <SafeAreaView showsVerticalScrollIndicator={false} style={styles.wrapper}>
@@ -69,6 +67,11 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
                 isi: item.map(value => value.isi),
               })
             }
+            onDelete={id => {
+              let notifikasiBaru = notifikasi.filter(item => item.id !== id);
+              console.log(notifikasiBaru)
+              setNotifikasi(notifikasiBaru);
+            }}
           />
         )}
         keyExtractor={item => item.map(value => value.id).toString()}
@@ -88,7 +91,7 @@ const styles = {
     fontWeight: '700',
     fontSize: 15,
     marginTop: 10,
-    textTransform:'capitalize',
+    textTransform: 'capitalize',
   },
   image: {
     height: 45,

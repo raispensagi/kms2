@@ -179,9 +179,9 @@ const DraftArtikel = ({route, navigation}) => {
                  <ShortInput value={judul} placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
             <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
-                    itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray}}
+                    itemStyle={{fontSize:14, fontWeight: 'normal', fontFamily:'Nunito', colors:colortext.gray,}}
                     selectedValue={selectedValue}
-                    style={{ width: 320, opacity:0.6,  marginTop:-3}}
+                    style={{ width: 320, opacity:0.6,  marginTop:-3,marginLeft:7}}
                     onValueChange={(itemValue, itemIndex) => onInputChange(itemValue, 'kategori')}
                     mode='dropdown'
                 >
