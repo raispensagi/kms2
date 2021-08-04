@@ -71,6 +71,7 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
               let notifikasiBaru = notifikasi.filter(item => item.id !== id);
               console.log(notifikasiBaru)
               setNotifikasi(notifikasiBaru);
+              onRefresh();
             }}
           />
         )}
