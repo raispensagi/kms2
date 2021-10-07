@@ -32,14 +32,6 @@ Fitur yang ada di aplikasi KMS Sawit :
 
 <img src="/Tampilan/beranda.jpg" width="200"  >
 
-**Profil**
-
-<img src="/Tampilan/12214832048783.jpg" width="200"  >
-
-**Login**
-
-<img src="/Tampilan/12216831727710.jpg" width="200"  >
-
 ## **Download APK**
 
 [Download APK for Android](https://drive.google.com/file/d/1Z5YvuPnRSus7kSJuih1Gm88YwYNcQE-V/view?usp=sharing)
