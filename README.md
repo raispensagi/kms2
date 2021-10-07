@@ -42,4 +42,4 @@ Fitur yang ada di aplikasi KMS Sawit :
 
 ## **Download APK**
 
-[Download APK for Android](https://drive.google.com/file/d/1Vi1EQUJpF2osqJKrZqZYRC8odTf1iKmw/view?usp=sharing)
+[Download APK for Android](https://drive.google.com/file/d/1Z5YvuPnRSus7kSJuih1Gm88YwYNcQE-V/view?usp=sharing)
