@@ -18,7 +18,7 @@ Fitur yang ada di aplikasi KMS Sawit :
   - Menandai (bookmark) pengetahuan yang ingin disimpan
   - Melihat pengetahuan yang ditandai (disimpan)
   - Melihat profil dan pengetahuan yang pernah dibuat/ditambahkan
-  - Notifikasi
+  - Menambahkan Pengumuman
   
 ## **Tampilan Aplikasi**
 [Prototype Aplikasi di Figma](https://bit.ly/KMSPakar)
@@ -31,6 +31,14 @@ Fitur yang ada di aplikasi KMS Sawit :
 **Beranda**
 
 <img src="/Tampilan/beranda.jpg" width="200"  >
+
+**Tambah Artikel**
+
+<img src="/Tampilan/1621823866350.jpg" width="200"  >
+
+**Pengumuman**
+
+<img src="/Tampilan/1621823866409.jpg" width="200"  >
 
 ## **Download APK**
 
