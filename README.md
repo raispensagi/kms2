@@ -25,12 +25,12 @@ Fitur yang ada di aplikasi KMS Sawit :
 
 **Welcome page**
 
-<img src="/Tampilan/12216831966010.jpg" width="200" > <img src="/Tampilan/12216832959828.jpg" width="200"  >
-<img src="/Tampilan/12216832751778.jpg" width="200"  >
+<img src="/Tampilan/wp1.jpg" width="200" > <img src="/Tampilan/wp2.jpg" width="200"  >
+<img src="/Tampilan/wp3.jpg" width="200"  > <img src="/Tampilan/wp4.jpg" width="200"  >
 
 **Beranda**
 
-<img src="/Tampilan/12214832087873.jpg" width="200"  >
+<img src="/Tampilan/beranda.jpg" width="200"  >
 
 **Profil**
 
