@@ -1,7 +1,7 @@
 # KMS Sawit 2021
 
-[Deskripsi](#deskripsi) | [Fitur](#fitur) | [Tampilan Aplikasi](#tampilan-aplikasi) | [Download APK](#download-apk)
-:---:|:---:|:---:|:---:
+[Deskripsi](#deskripsi) | [Fitur](#fitur) | [Tampilan Aplikasi](#tampilan-aplikasi) | [Download APK](#download-apk) | [Guide Book](#guide-book)
+:---:|:---:|:---:|:---:|:---:
 
 ## **Deskripsi**
 
