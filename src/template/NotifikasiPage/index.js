@@ -9,11 +9,14 @@ import {
     listenOrientationChange as loc,
     removeOrientationListener as rol
   } from 'react-native-responsive-screen';
-const NotifikasiPage = ({judul, isi}) => {
+const NotifikasiPage = ({judul, isi, penulis, date}) => {
     return (
         <View style={styles.wrap}>
             <Text style={styles.judul}>{judul}</Text>
+            <Text style={styles.isi}>{`Oleh ${penulis}`}</Text>
+            <Text style={styles.isi}>{date}</Text>
             <Text style={styles.isi}>{isi}</Text>
+            
         </View>
     )
 }

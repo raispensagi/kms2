@@ -11,13 +11,15 @@ import { NotifikasiPage } from '../../template';
 import { colors } from '../../utils';
 
 const PageNotifikasi = ({route}) => {
-    const {headline, isi} = route.params;
+    const {headline, isi, penulis, date} = route.params || {};
       
     return (
         <SafeAreaView>
                   <NotifikasiPage
                     judul={headline}
                     isi={isi}
+                    penulis={penulis}
+                    date={date}
                   />
         </SafeAreaView>
     )

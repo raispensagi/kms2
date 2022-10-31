@@ -56,6 +56,7 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
         renderItem={({item}) => (
           <BoxNotifikasi
             id={item.map(value => value.id)}
+            date={item.map(value => value.tanggal)}
             name={item.map(value => value.headline)}
             isi={item
               .map(value => value.isi)
@@ -65,6 +66,8 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
               navigation.navigate('Pengumuman', {
                 headline: item.map(value => value.headline),
                 isi: item.map(value => value.isi),
+                penulis: item.map(value => value.penulis),
+                date: item.map(value => value.tanggal),
               })
             }
             onDelete={id => {

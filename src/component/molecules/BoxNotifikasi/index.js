@@ -10,7 +10,7 @@ import {
 } from 'react-native-responsive-screen';
 import {PakarMale} from '../../../assets';
 import AsyncStorage from '@react-native-community/async-storage';
-const BoxNotifikasi = ({name, isi, onPress, id, onDelete}) => {
+const BoxNotifikasi = ({name, isi, onPress, id, onDelete, date}) => {
   const Delete = () => {
     //handler for Long Click
     const remove = async () => {
@@ -68,6 +68,7 @@ const BoxNotifikasi = ({name, isi, onPress, id, onDelete}) => {
               <Text style={styles.text2}>Hapus</Text>
             </TouchableOpacity>
           </View> */}
+        <Text style={styles.text2}>{date}</Text>
         </View>
       </View>
     </TouchableOpacity>
