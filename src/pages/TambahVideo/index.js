@@ -33,7 +33,7 @@ const TambahVideo = ({navigation}) => {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/video/draft `,
+        fetch(`http://117.53.47.76:8001/api/video/draft `,
         {
             method:"POST",
             headers: new Headers ( {
@@ -69,7 +69,7 @@ const TambahVideo = ({navigation}) => {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (form.judul!==''  && form.video_audio!==''&& form.isi!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/video/post`,
+        fetch(`http://117.53.47.76:8001/api/video/post`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -96,7 +96,9 @@ const TambahVideo = ({navigation}) => {
     const [selectedValueSub, setSelectedValueSub] = useState();
     return(
         <ScrollView style={{flex:1}}>
+            <Text style={styles.textbutton} >Tuliskan Judul</Text>
             <ShortInput placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
+            <Text style={styles.textbutton} >Tuliskan ID Video Saja. Contoh : 0GfRJZ6eu-Y</Text>
             <ShortInput placeholder='ID link video*' onChangeText={value=>onInputChange(value, 'video_audio')}/>
             <Text style={{fontSize:11, marginHorizontal:20}}> * Masukkan hanya link ID video youtube. Contoh: link https://youtu.be/0GfRJZ6eu-Y , ID video : 0GfRJZ6eu-Y  </Text>
             {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
@@ -117,6 +119,7 @@ const TambahVideo = ({navigation}) => {
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
             </CardView> */}
+            <Text style={styles.textbutton} >Tuliskan Sumber Channel Youtubenya</Text>
             <ShortInput  placeholder='Sumber channel youtube' onChangeText={value=>onInputChange(value, 'isi')}/>
             <View>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
@@ -138,6 +141,10 @@ const styles = {
       marginHorizontal: 14, 
       marginTop: 10,
       opacity:0.6
-    }
+    },
+    textbutton : {
+        fontFamily: 'Nunito',
+        fontSize: 16,
+    },
   };
 export default TambahVideo;

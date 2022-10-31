@@ -18,7 +18,7 @@ const Profil = ({navigation}) => {
                 style: "cancel"
               },
               { text: "Iya", onPress: () => {
-                    fetch(`http://117.53.47.76/kms_backend/public/api/logout`,
+                    fetch(`http://117.53.47.76:8001/api/logout`,
                     {
                         method:"POST",
                         headers: {
@@ -33,7 +33,7 @@ const Profil = ({navigation}) => {
                 }
             ]
           );
-        // fetch(`http://117.53.47.76/kms_backend/public/api/logout`,
+        // fetch(`http://117.53.47.76:8001/api/logout`,
         // {
         //     method:"POST",
         //     headers: {
@@ -53,7 +53,7 @@ const Profil = ({navigation}) => {
     const profil = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/profil`,
+        fetch(`http://117.53.47.76:8001/api/profil`,
         {
             method:"GET",
             headers: new Headers ( {
@@ -77,7 +77,7 @@ const Profil = ({navigation}) => {
     const kontenpost = async (screen) => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/post/my`,
+        fetch(`http://117.53.47.76:8001/api/post/my`,
         {
             method:"GET",
             headers: new Headers ( {

@@ -11,7 +11,7 @@ const DaftarNotifikasi = ({jumlah, notif, navigation}) => {
   const getNotifikasi = async () => {
     const token = await AsyncStorage.getItem('userToken');
     const userToken = JSON.parse(token);
-    fetch(`http://117.53.47.76/kms_backend/public/api/notifikasi/my`, {
+    fetch(`http://117.53.47.76:8001/api/notifikasi/my`, {
       method: 'GET',
       headers: new Headers({
         Authorization: 'Bearer ' + userToken,

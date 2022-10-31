@@ -19,7 +19,7 @@ const [loading,setLoading]= useState(true)
 const getData = async () => {
 const token = await AsyncStorage.getItem('userToken')
 const userToken = JSON.parse(token)          
-    fetch(`http://117.53.47.76/kms_backend/public/api/konten/show/${id}`,
+    fetch(`http://117.53.47.76:8001/api/konten/show/${id}`,
     {
         method:"GET",
         headers: new Headers ( {

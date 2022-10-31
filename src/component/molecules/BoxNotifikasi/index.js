@@ -17,7 +17,7 @@ const BoxNotifikasi = ({name, isi, onPress, id, onDelete}) => {
       const token = await AsyncStorage.getItem('userToken');
       const userToken = JSON.parse(token);
       fetch(
-        `http://117.53.47.76/kms_backend/public/api/notifikasi/my/delete/${id}`,
+        `http://117.53.47.76:8001/api/notifikasi/my/delete/${id}`,
         {
           method: 'DELETE',
           headers: new Headers({
@@ -60,14 +60,14 @@ const BoxNotifikasi = ({name, isi, onPress, id, onDelete}) => {
           ):(
             <Text style={styles.textisi}>{isi}</Text>
           )}
-          <View>
+          {/* <View>
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={Delete}
               style={styles.buttom}>
               <Text style={styles.text2}>Hapus</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </View>
     </TouchableOpacity>

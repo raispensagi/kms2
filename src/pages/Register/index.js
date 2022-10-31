@@ -28,7 +28,7 @@ const Register = ({navigation}) => {
             Alert.alert("Password tidak boleh kosong")
         }
         if (form.password!=='' && form.email!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/pakar/register`,
+        fetch(`http://117.53.47.76:8001/api/pakar/register`,
         {
             method:"POST",
             headers: {

@@ -52,7 +52,7 @@ const TambahDokumen = ({navigation}) => {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/edokumen/draft `,
+        fetch(`http://117.53.47.76:8001/api/edokumen/draft `,
         {
             method:"POST",
             headers: new Headers ( {
@@ -103,7 +103,7 @@ const TambahDokumen = ({navigation}) => {
             Alert.alert("Deskripsi tidak boleh kosong")
         }
         if (form.judul!=='' && form.penulis!=='' && form.tahun!=='' && form.penerbit!=='' && form.halaman!==''&& form.bahasa!==''&& form.file!==''&& form.deskripsi!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/edokumen/post`,
+        fetch(`http://117.53.47.76:8001/api/edokumen/post`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -129,12 +129,19 @@ const TambahDokumen = ({navigation}) => {
     const [selectedValue, setSelectedValue] = useState("Pendahuluan terkait Kelapa Sawit");
     return(
         <ScrollView>
+            <Text style={styles.textbutton} >Tuliskan Judul</Text>
             <ShortInput placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
+            <Text style={styles.textbutton} >Tuliskan Penulis</Text>
             <ShortInput  placeholder='Penulis' onChangeText={value=>onInputChange(value, 'penulis')}/>
+            <Text style={styles.textbutton} >Tuliskan Tahun</Text>
             <ShortInput  placeholder='Tahun' onChangeText={value=>onInputChange(value, 'tahun')}/>
+            <Text style={styles.textbutton} >Tuliskan Pernerbit</Text>
             <ShortInput  placeholder='Penerbit' onChangeText={value=>onInputChange(value, 'penerbit')}/>
+            <Text style={styles.textbutton} >Tuliskan Halaman</Text>
             <ShortInput  placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
+            <Text style={styles.textbutton} >Tuliskan Bahasa</Text>
             <ShortInput  placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
+            <Text style={styles.textbutton} >Tuliskan Link untuk mengunduh file</Text>
             <ShortInput  placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
             {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
@@ -154,6 +161,7 @@ const TambahDokumen = ({navigation}) => {
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
             </CardView> */}
+            <Text style={styles.textbutton} >Tuliskan Ringkasan dari dokumen tersebut</Text>
             <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('Daftar Draft')}
@@ -175,6 +183,10 @@ const styles = {
     marginHorizontal: 14, 
     marginTop: 10,
     opacity:0.6
-  }
+  },
+  textbutton : {
+    fontFamily: 'Nunito',
+    fontSize: 16,
+},
 };
 export default TambahDokumen;

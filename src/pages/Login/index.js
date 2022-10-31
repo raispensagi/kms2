@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
             Alert.alert("Password tidak boleh kosong")
         }
         if (form.password!=='' && form.email!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/login`,
+        fetch(`http://117.53.47.76:8001/api/login`,
         {
             method:"POST",
             headers: {

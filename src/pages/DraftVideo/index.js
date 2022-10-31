@@ -21,7 +21,7 @@ const DraftVideo = ({route, navigation}) => {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
+        fetch(`http://117.53.47.76:8001/api/draft/edit/${id}`,
             {
                 method:"POST",
                 headers: new Headers ( {
@@ -31,7 +31,7 @@ const DraftVideo = ({route, navigation}) => {
                 }),
                 body: JSON.stringify(formsend)
         })
-        fetch(`http://117.53.47.76/kms_backend/public/api/draft/post/${id}`,
+        fetch(`http://117.53.47.76:8001/api/draft/post/${id}`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -66,7 +66,7 @@ const DraftVideo = ({route, navigation}) => {
             Alert.alert("Sumber channel youtube tidak boleh kosong")
         }
         if (formsend.judul!=='' && formsend.isi!=='' && formsend.video_audio!=='') {
-        fetch(`http://117.53.47.76/kms_backend/public/api/draft/edit/${id}`,
+        fetch(`http://117.53.47.76:8001/api/draft/edit/${id}`,
         {
             method:"POST",
             headers: new Headers ( {
@@ -144,7 +144,7 @@ const DraftVideo = ({route, navigation}) => {
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-            fetch(`http://117.53.47.76/kms_backend/public/api/konten/show/${id}`,
+            fetch(`http://117.53.47.76:8001/api/konten/show/${id}`,
             {
                 method:"GET",
                 headers: new Headers ( {

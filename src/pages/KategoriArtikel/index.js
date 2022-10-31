@@ -16,7 +16,7 @@ const KategoriArtikel = ({navigation}) => {
     const getData = async () => {
         const token = await AsyncStorage.getItem('userToken')
         const userToken = JSON.parse(token)          
-        fetch(`http://117.53.47.76/kms_backend/public/api/konten/artikel`,
+        fetch(`http://117.53.47.76:8001/api/konten/artikel`,
         {
             method:"GET",
             headers: new Headers ( {
