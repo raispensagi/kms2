@@ -68,7 +68,7 @@ const BoxNotifikasi = ({name, isi, onPress, id, onDelete, date}) => {
               <Text style={styles.text2}>Hapus</Text>
             </TouchableOpacity>
           </View> */}
-        <Text style={styles.text2}>{date}</Text>
+        {/* <Text style={styles.text2}>{date}</Text> */}
         </View>
       </View>
     </TouchableOpacity>
