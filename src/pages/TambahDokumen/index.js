@@ -161,7 +161,7 @@ const TambahDokumen = ({navigation}) => {
                     <Picker.Item  label="Manajemen SDM, Keuangan, dan Pemasaran" value="Manajemen SDM, Keuangan, dan Pemasaran" />
                 </Picker>
             </CardView> */}
-            <Text style={styles.textbutton} >Tuliskan Ringkasan dari dokumen tersebut</Text>
+            <Text style={styles.textbutton} >Tuliskan Ringkasan Dari Dokumen Itu</Text>
             <LongInput  placeholder='Deskripsi' onChangeText={value=>onInputChange(value, 'deskripsi')}/>
             <AddButton  title1='Simpan pada draft' title2='Bagikan' 
                         onPress1={()=> simpan('Daftar Draft')}
