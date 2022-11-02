@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, ScrollView, Alert } from 'react-native';
+import { View, ScrollView, Alert, Text } from 'react-native';
 import { ShortInput, LongInput, ActionButton, RedButton, AddButton } from '../../component/atoms';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Picker} from '@react-native-community/picker';
@@ -141,7 +141,7 @@ const TambahDokumen = ({navigation}) => {
             <ShortInput  placeholder='Halaman' onChangeText={value=>onInputChange(value, 'halaman')}/>
             <Text style={styles.textbutton} >Tuliskan Bahasa</Text>
             <ShortInput  placeholder='Bahasa' onChangeText={value=>onInputChange(value, 'bahasa')}/>
-            <Text style={styles.textbutton} >Tuliskan Link untuk mengunduh file</Text>
+            <Text style={styles.textbutton} >Tuliskan Link Untuk Mengunduh File</Text>
             <ShortInput  placeholder='Link Unduh' onChangeText={value=>onInputChange(value, 'file')}/>
             {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
                 <Picker
@@ -187,6 +187,8 @@ const styles = {
   textbutton : {
     fontFamily: 'Nunito',
     fontSize: 16,
+    marginHorizontal: 14, 
+    marginTop: 10,
 },
 };
 export default TambahDokumen;

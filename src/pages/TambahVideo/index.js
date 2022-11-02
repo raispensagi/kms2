@@ -96,9 +96,9 @@ const TambahVideo = ({navigation}) => {
     const [selectedValueSub, setSelectedValueSub] = useState();
     return(
         <ScrollView style={{flex:1}}>
-            <Text style={styles.textbutton} >Tuliskan Judul</Text>
+            <Text style={styles.textbutton} >Tuliskan Judul Video</Text>
             <ShortInput placeholder='Judul' onChangeText={value=>onInputChange(value, 'judul')}/>
-            <Text style={styles.textbutton} >Tuliskan ID Video Saja. Contoh : 0GfRJZ6eu-Y</Text>
+            <Text style={styles.textbutton} >Ingat Tuliskan ID Video Saja. Contoh : 0GfRJZ6eu-Y</Text>
             <ShortInput placeholder='ID link video*' onChangeText={value=>onInputChange(value, 'video_audio')}/>
             <Text style={{fontSize:11, marginHorizontal:20}}> * Masukkan hanya link ID video youtube. Contoh: link https://youtu.be/0GfRJZ6eu-Y , ID video : 0GfRJZ6eu-Y  </Text>
             {/* <CardView style={styles.container} cardElevation={1} cardMaxElevation={1} cornerRadius={9}>
@@ -145,6 +145,8 @@ const styles = {
     textbutton : {
         fontFamily: 'Nunito',
         fontSize: 16,
+        marginHorizontal: 14, 
+        marginTop: 10,
     },
   };
 export default TambahVideo;

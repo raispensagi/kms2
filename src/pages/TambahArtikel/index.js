@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, ScrollView, Alert } from 'react-native';
+import { View, ScrollView, Alert, Text } from 'react-native';
 import { ShortInput, LongInput, ActionButton, RedButton, AddButton, Dropdown} from '../../component/atoms';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Picker} from '@react-native-community/picker';
@@ -143,6 +143,8 @@ const styles = {
     textbutton : {
         fontFamily: 'Nunito',
         fontSize: 16,
+        marginHorizontal: 14, 
+        marginTop: 10,
     },
   };
 export default TambahArtikel;
