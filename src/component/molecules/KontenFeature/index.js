@@ -10,9 +10,9 @@ const KontenFeature = ({onPressArtikel, onPressVideo, onPressDokumen}) => {
         <View>
         <Text style={styles.text}>Konten KMS</Text>
             <View style={styles.wrapper}>
-                    <Konten title="Daftar     Artikel" img={Artikel} onPress={onPressArtikel}/>
-                    <Konten title="Daftar      Video" img={Video} onPress={onPressVideo}/>
-                    <Konten title="Daftar E-Dokumen" img={Ebook} onPress={onPressDokumen}/>
+                    <Konten title="Daftar        Artikel" img={Artikel} onPress={onPressArtikel}/>
+                    <Konten title="Daftar        Video" img={Video} onPress={onPressVideo}/>
+                    <Konten title="Daftar         E-Dokumen" img={Ebook} onPress={onPressDokumen}/>
             </View>
         </View>
     )

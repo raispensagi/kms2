@@ -10,9 +10,9 @@ const KontenFeature2 = ({onPressArtikel, onPressVideo, onPressDokumen,onPressPen
         <View>
         <Text style={styles.text}>Buat Konten KMS</Text>
             <View style={styles.wrapper}>
-                    <Konten title="Tambah Artikel" img={Tambahartikel} onPress={onPressArtikel}/>
+                    <Konten title="Tambah   Artikel" img={Tambahartikel} onPress={onPressArtikel}/>
                     <Konten title="Tambah   Video" img={Tambahvideo} onPress={onPressVideo}/>
-                    <Konten title="Tambah E-Dokumen" img={Tambahebook} onPress={onPressDokumen}/>
+                    <Konten title="Tambah   E-Dokumen" img={Tambahebook} onPress={onPressDokumen}/>
             </View>
             <View style={styles.wrapper1}>
                     <Konten title="Tambah Pengumuman" img={Tambahpengumuman} onPress={onPressPengumuman}/>
